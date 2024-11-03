@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024._06;
+﻿namespace advent_of_code._2023._06;
 
 public readonly record struct Race(ulong TimeLimit, ulong RecordDistance)
 {

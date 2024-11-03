@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024._05.puzzle1;
+﻿namespace advent_of_code._2023._05.puzzle1;
 
 [TestClass]
 public class Class1

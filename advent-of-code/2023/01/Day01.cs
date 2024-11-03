@@ -1,4 +1,4 @@
-namespace advent_of_code._2024._01;
+namespace advent_of_code._2023._01;
 
 [TestClass]
 public class Day01
