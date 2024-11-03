@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024._05;
+﻿namespace advent_of_code._2023._05;
 
 internal struct MappedRange(NumberType DestinationStart, NumberType SourceStart, NumberType Length) : IParsable<MappedRange>
 {

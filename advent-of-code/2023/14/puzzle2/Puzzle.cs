@@ -1,4 +1,4 @@
-namespace advent_of_code._2024._14.puzzle2;
+namespace advent_of_code._2023._14.puzzle2;
 
 [TestClass]
 public class Puzzle
