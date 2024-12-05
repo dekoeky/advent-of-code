@@ -4,6 +4,39 @@ namespace advent_of_code._2024.Day04;
 
 internal static class Calculations
 {
+    public static int CountMasCrossings(string input)
+    {
+        var count = 0;
+        var chars = StringTo2DArray(input);
+        var rows = chars.GetLength(0);
+        var cols = chars.GetLength(1);
+
+        var startPosition = new Point(0, 0);
+
+        for (startPosition.Y = 0; startPosition.Y < rows; startPosition.Y++)
+            for (startPosition.X = 0; startPosition.X < cols; startPosition.X++)
+            {
+                //Find the center letter for starters
+                if (chars[startPosition.Y, startPosition.X] != 'A') continue;
+
+                //Cant have a cross around this position
+                if (startPosition.Y < 1 || startPosition.Y >= rows - 1) continue;
+                if (startPosition.X < 1 || startPosition.X >= cols - 1) continue;
+
+
+                var topLeft = chars[startPosition.Y - 1, startPosition.X - 1];
+                var topRight = chars[startPosition.Y - 1, startPosition.X + 1];
+                var botLeft = chars[startPosition.Y + 1, startPosition.X - 1];
+                var botRight = chars[startPosition.Y + 1, startPosition.X + 1];
+
+                var a = (topLeft == 'M' && botRight == 'S') || (topLeft == 'S' && botRight == 'M');
+                var b = (botLeft == 'M' && topRight == 'S') || (botLeft == 'S' && topRight == 'M');
+
+                if (a && b) count++;
+            }
+
+        return count;
+    }
 
     public static int CountOccurances(string input, string wordToSearch)
     {
