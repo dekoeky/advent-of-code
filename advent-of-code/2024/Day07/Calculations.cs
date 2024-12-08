@@ -2,14 +2,14 @@
 
 public static class Calculations
 {
-    private static readonly char[] Operators = ['+', '*'];
-    public static IEnumerable<char> GetPossibleOperators()
+    public static string[] Operators = ["+", "*"];
+    public static IEnumerable<string> GetPossibleOperators()
     {
         foreach (var @operator in Operators)
             yield return @operator;
     }
 
-    public static IEnumerable<char[]> GetPossibleOperators(int level)
+    public static IEnumerable<string[]> GetPossibleOperators(int level)
     {
         if (level == 1)
         {
@@ -18,7 +18,7 @@ public static class Calculations
             yield break;
         }
 
-        var operators = new char[level];
+        var operators = new string[level];
 
         foreach (var primaryOperator in Operators)
         {
@@ -38,7 +38,7 @@ public static class Calculations
         return possibleOperators.Any(o => IsValid(equation, o));
     }
 
-    public static bool IsValid(Equation equation, char[] operators)
+    public static bool IsValid(Equation equation, string[] operators)
     {
         var result = equation.Values[0];
 
@@ -49,13 +49,13 @@ public static class Calculations
 
             result = o switch
             {
-                '+' => result + v,
-                '*' => result * v,
+                "+" => result + v,
+                "*" => result * v,
+                "||" => long.Parse($"{result}{v}"),
                 _ => throw new InvalidOperationException(),
             };
         }
 
         return result == equation.TestValue;
     }
-
 }

@@ -14,7 +14,7 @@ public static class Inputs
                                   292: 11 6 16 20
                                   """;
 
-    public const string Puzzle1 = """
+    public const string Puzzle = """
                                   503516274925: 9 314 8 83 6 45 997 25
                                   999: 45 25 5 645 4
                                   15456974992821: 22 96 792 149 491 23
