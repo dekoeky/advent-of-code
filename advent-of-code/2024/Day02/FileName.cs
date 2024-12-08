@@ -12,4 +12,6 @@ internal class Report
             Levels = parts.Select(int.Parse).ToArray(),
         };
     }
+
+    public override string ToString() => string.Join(' ', Levels);
 }
