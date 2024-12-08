@@ -1,0 +1,24 @@
+﻿namespace advent_of_code._2024.Day08;
+
+public static class String2D
+{
+    public static char[,] StringTo2DArray(string inputString)
+    {
+        // Split the input string by newline to get each line
+        var lines = inputString.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries);
+
+        // Determine the number of rows and columns
+        var rows = lines.Length;
+        var cols = lines[0].Length;
+
+        // Create a 2D array to store the characters
+        var result = new char[rows, cols];
+
+        // Fill the 2D array with characters from each line
+        for (var i = 0; i < rows; i++)
+            for (var j = 0; j < cols; j++)
+                result[i, j] = lines[i][j];
+
+        return result;
+    }
+}
