@@ -11,7 +11,7 @@ internal static class Input
         1 3 6 7 9
         """;
 
-    public const string Puzzle1 = """
+    public const string Puzzle = """
                 2 4 6 9 10 9
         45 48 51 52 55 58 60 60
         49 52 54 57 58 61 64 68
