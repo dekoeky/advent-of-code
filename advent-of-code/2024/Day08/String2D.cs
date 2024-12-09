@@ -1,4 +1,6 @@
-﻿namespace advent_of_code._2024.Day08;
+﻿using System.Text;
+
+namespace advent_of_code._2024.Day08;
 
 public static class String2D
 {
@@ -20,5 +22,23 @@ public static class String2D
                 result[i, j] = lines[i][j];
 
         return result;
+    }
+
+    public static string Array2DToString(char[,] characters)
+    {
+        var newlineLength = Environment.NewLine.Length;
+        var rows = characters.GetLength(0);
+        var cols = characters.GetLength(1);
+        var length = characters.Length + (rows - 1) * newlineLength;
+        var sb = new StringBuilder(length);
+
+        for (var r = 0; r < rows; r++)
+        {
+            if (r > 0) sb.Append(Environment.NewLine);
+            for (var c = 0; c < cols; c++)
+                sb.Append(characters[r, c]);
+        }
+
+        return sb.ToString();
     }
 }
