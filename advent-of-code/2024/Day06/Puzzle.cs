@@ -33,21 +33,25 @@ public class Puzzle
     public void Example2()
     {
         //Arrange
+        var map = String2D.StringTo2DArray(Inputs.Example);
 
         //Act
+        var result = Calculations.GetPossibleLoopObstructionPositionsCount(map);
 
         //Assert
-
+        Assert.AreEqual(6, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
         //Arrange
+        var map = String2D.StringTo2DArray(Inputs.Puzzle);
 
         //Act
+        var result = Calculations.GetPossibleLoopObstructionPositionsCount(map);
 
         //Assert
-
+        Console.WriteLine(result);
     }
 }
