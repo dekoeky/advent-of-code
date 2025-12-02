@@ -10,7 +10,7 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        var sum = Calculations.SumOfInvalidIds(input);
+        var sum = Calculations.SumOfInvalidIds(input, IdRange.ValidateAbAb);
 
         //Assert
         Console.WriteLine($"Sum of invalid ids is : {sum}");
@@ -25,7 +25,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        var sum = Calculations.SumOfInvalidIds(input);
+        var sum = Calculations.SumOfInvalidIds(input, IdRange.ValidateAbAb);
 
         //Assert
         Console.WriteLine($"Sum of invalid ids is : {sum}");
@@ -35,21 +35,26 @@ public class Puzzle
     public void Example2()
     {
         //Arrange
+        var input = Inputs.Example;
 
         //Act
+        var sum = Calculations.SumOfInvalidIds(input, IdRange.Validate2);
 
         //Assert
-
+        Console.WriteLine($"Sum of invalid ids is : {sum}");
+        Assert.AreEqual(4174379265, sum);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
         //Arrange
+        var input = Inputs.Puzzle;
 
         //Act
+        var sum = Calculations.SumOfInvalidIds(input, IdRange.Validate2);
 
         //Assert
-
+        Console.WriteLine($"Sum of invalid ids is : {sum}");
     }
 }
