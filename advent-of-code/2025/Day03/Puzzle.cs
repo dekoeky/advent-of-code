@@ -33,21 +33,27 @@ public class Puzzle
     public void Example2()
     {
         //Arrange
+        var input = Inputs.Example;
+        var numberOfBatteries = 12;
 
         //Act
+        var sum = Calculations.CalculateJoltageSum2(input, numberOfBatteries);
 
         //Assert
-
+        Assert.AreEqual(3121910778619, sum);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
         //Arrange
+        var input = Inputs.Puzzle;
+        var numberOfBatteries = 12;
 
         //Act
+        var sum = Calculations.CalculateJoltageSum2(input, numberOfBatteries);
 
         //Assert
-
+        Console.WriteLine($"Sum of Max Joltages: {sum}");
     }
 }
