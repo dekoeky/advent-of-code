@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day25;
+﻿namespace advent_of_code.Helpers;
 
 internal static class SplitOn
 {

@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day24;
+﻿namespace advent_of_code._2024.Day24.Models;
 
 public class Gate
 {
