@@ -7,8 +7,10 @@ public class Puzzle
     public void Example1()
     {
         //Arrange
+        var input = Inputs.Example;
 
         //Act
+        throw new NotImplementedException();
 
         //Assert
 
@@ -18,8 +20,10 @@ public class Puzzle
     public void Puzzle1()
     {
         //Arrange
+        var input = Inputs.Puzzle;
 
         //Act
+        throw new NotImplementedException();
 
         //Assert
 
@@ -29,8 +33,10 @@ public class Puzzle
     public void Example2()
     {
         //Arrange
+        var input = Inputs.Example;
 
         //Act
+        throw new NotImplementedException();
 
         //Assert
 
@@ -40,8 +46,10 @@ public class Puzzle
     public void Puzzle2()
     {
         //Arrange
+        var input = Inputs.Puzzle;
 
         //Act
+        throw new NotImplementedException();
 
         //Assert
 
