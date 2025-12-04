@@ -27,5 +27,5 @@ public static class CharArrayExtensions
     }
 
     public static bool HaxMaxNAdjacentRollsOfPaper(this char[,] data, int row, int col, int n) =>
-        data.LoopSurroundingValues(row, col).All(item => item != '@' || --n > 0);
+        data.LoopSurroundingValues(row, col).All(item => item is '.' or 'x' || --n > 0);
 }

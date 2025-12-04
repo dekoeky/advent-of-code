@@ -8,9 +8,10 @@ public class Puzzle
     {
         //Arrange
         var input = Inputs.Example;
+        var remove = false;
 
         //Act
-        var accessibleRolls = Calculations.RollsAccessibleByForklift(input);
+        var accessibleRolls = Calculations.RollsAccessibleByForklift(input, remove);
 
         //Assert
         Assert.AreEqual(13, accessibleRolls);
@@ -21,12 +22,14 @@ public class Puzzle
     {
         //Arrange
         var input = Inputs.Puzzle;
+        var remove = false;
 
         //Act
-        var accessibleRolls = Calculations.RollsAccessibleByForklift(input);
+        var accessibleRolls = Calculations.RollsAccessibleByForklift(input, remove);
 
         //Assert
         Console.WriteLine($"Accessible Paper Rolls: {accessibleRolls}");
+        Assert.AreEqual(1363, accessibleRolls);
     }
 
     [TestMethod]
@@ -34,12 +37,13 @@ public class Puzzle
     {
         //Arrange
         var input = Inputs.Example;
+        var remove = true;
 
         //Act
-        throw new NotImplementedException();
+        var accessibleRolls = Calculations.RollsAccessibleByForklift(input, remove);
 
         //Assert
-
+        Assert.AreEqual(43, accessibleRolls);
     }
 
     [TestMethod]
@@ -47,11 +51,13 @@ public class Puzzle
     {
         //Arrange
         var input = Inputs.Puzzle;
+        var remove = true;
 
         //Act
-        throw new NotImplementedException();
+        var accessibleRolls = Calculations.RollsAccessibleByForklift(input, remove);
 
         //Assert
-
+        Console.WriteLine($"Accessible Paper Rolls: {accessibleRolls}");
+        Assert.AreEqual(8184, accessibleRolls);
     }
 }
