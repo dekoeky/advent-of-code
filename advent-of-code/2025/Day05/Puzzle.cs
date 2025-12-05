@@ -36,10 +36,10 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        var result = Calculations.HowManyIngredientsAreFresh(input);
+        var result = Calculations.CountIngredientIdsInFreshRange(input);
 
         //Assert
-        Assert.AreEqual(00000000, result);
+        Assert.AreEqual(14, result);
     }
 
     [TestMethod]
@@ -49,7 +49,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        var result = Calculations.HowManyIngredientsAreFresh(input);
+        var result = Calculations.CountIngredientIdsInFreshRange(input);
 
         //Assert
         Console.WriteLine($"Result: {result}");
