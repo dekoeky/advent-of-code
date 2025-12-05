@@ -1,4 +1,6 @@
-﻿namespace advent_of_code._2024.Day08;
+﻿using advent_of_code.Helpers;
+
+namespace advent_of_code._2024.Day08;
 
 public static class Calculations
 {
