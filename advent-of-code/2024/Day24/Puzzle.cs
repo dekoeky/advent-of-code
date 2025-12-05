@@ -48,6 +48,7 @@ public class Puzzle
         //Arrange
 
         //Act
+        throw new NotImplementedException();
 
         //Assert
 
@@ -59,6 +60,7 @@ public class Puzzle
         //Arrange
 
         //Act
+        throw new NotImplementedException();
 
         //Assert
 
