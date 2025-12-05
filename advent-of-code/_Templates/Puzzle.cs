@@ -10,10 +10,10 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        throw new NotImplementedException();
+        var result = Calculations.Perform(input);
 
         //Assert
-
+        Assert.AreEqual(00000000, result);
     }
 
     [TestMethod]
@@ -23,10 +23,10 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        throw new NotImplementedException();
+        var result = Calculations.Perform(input);
 
         //Assert
-
+        Console.WriteLine($"Result: {result}");
     }
 
     [TestMethod]
@@ -36,10 +36,10 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        throw new NotImplementedException();
+        var result = Calculations.Perform(input);
 
         //Assert
-
+        Assert.AreEqual(00000000, result);
     }
 
     [TestMethod]
@@ -49,9 +49,9 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        throw new NotImplementedException();
+        var result = Calculations.Perform(input);
 
         //Assert
-
+        Console.WriteLine($"Result: {result}");
     }
 }

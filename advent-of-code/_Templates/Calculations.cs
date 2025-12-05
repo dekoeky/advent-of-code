@@ -2,5 +2,8 @@
 
 public static class Calculations
 {
-
+    public static int Perform(string input)
+    {
+        throw new NotImplementedException();
+    }
 }
