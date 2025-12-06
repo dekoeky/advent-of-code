@@ -24,6 +24,44 @@ public static class Calculations
         return values.Sum();
     }
 
+
+    public static long SumOfOperations2(string input)
+    {
+        var lines = SplitOn.NewLines(input);
+
+        var h = lines.First().Length;
+        var w = lines.Length - 1;
+
+        var operations = ParseLine(lines.Last(), ToOperator);
+
+        var characters = new char[h, w];
+
+        for (var r = 0; r < h; r++)
+            for (var c = 0; c < w; c++)
+                characters[r, c] = lines[c][r];
+
+        var flipped = CharArray.ToString(characters)
+            .Replace(" ", "");
+
+        var groups = SplitOn.EmptyLines(flipped);
+        var valuesPerGroup = groups.Select(v => SplitOn.NewLines(v).Select(long.Parse).ToArray()).ToArray();
+
+        var groupResults = new long[groups.Length];
+
+        for (var groupId = 0; groupId < groups.Length; groupId++)
+        {
+            var operation = operations[groupId];
+            var groupValues = valuesPerGroup[groupId];
+
+            groupResults[groupId] = groupValues[0];
+
+            for (var i = 1; i < groupValues.Length; i++)
+                groupResults[groupId] = operation(groupResults[groupId], groupValues[i]);
+        }
+
+        return groupResults.Sum();
+    }
+
     private static T[] ParseLine<T>(string line, Func<string, T> x) =>
         line.Split(' ', StringSplitOptions.RemoveEmptyEntries)
             .Select(x)

@@ -36,10 +36,10 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        var result = Calculations.SumOfOperations(input);
+        var result = Calculations.SumOfOperations2(input);
 
         //Assert
-        Assert.AreEqual(00000000, result);
+        Assert.AreEqual(3263827, result);
     }
 
     [TestMethod]
@@ -49,7 +49,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        var result = Calculations.SumOfOperations(input);
+        var result = Calculations.SumOfOperations2(input);
 
         //Assert
         Console.WriteLine($"Result: {result}");
