@@ -26,4 +26,31 @@ public static class CharArray
 
         return sb.ToString();
     }
+
+    public static bool TryFind(this char[,] characters, char match, out int r, out int c)
+    {
+        for (r = 0; r < characters.GetLength(0); r++)
+            for (c = 0; c < characters.GetLength(1); c++)
+                if (characters[r, c] == match)
+                    return true;
+
+        r = 0;
+        c = 0;
+        return false;
+    }
+
+    public static bool TryFind(this char[,] characters, char match, out (int r, int c) position)
+    {
+
+        for (var r = 0; r < characters.GetLength(0); r++)
+            for (var c = 0; c < characters.GetLength(1); c++)
+                if (characters[r, c] == match)
+                {
+                    position = (r, c);
+                    return true;
+                }
+
+        position = (0, 0);
+        return false;
+    }
 }
