@@ -24,6 +24,6 @@ public static class CharArray
             sb.AppendLine();
         }
 
-        throw new InvalidOperationException();
+        return sb.ToString();
     }
 }
