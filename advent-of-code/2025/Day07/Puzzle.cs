@@ -38,10 +38,10 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        var result = Calculations.CountBeamSplits(input);
+        var result = Calculations.CountPaths(input);
 
         //Assert
-        Assert.AreEqual(00000000, result);
+        Assert.AreEqual(40, result);
     }
 
     [TestMethod]
@@ -51,9 +51,10 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        var result = Calculations.CountBeamSplits(input);
+        var result = Calculations.CountPaths(input);
 
         //Assert
         Console.WriteLine($"Result: {result}");
+        Assert.AreEqual(15118009521693, result);
     }
 }
