@@ -14,17 +14,20 @@ public class Circuit
 
     public static Circuit Merge(Circuit a, Circuit b)
     {
-        Debug.WriteLine($"Attempting to merge circuits {a} and {b}");
+        //Debug.WriteLine($"Attempting to merge circuits {a} and {b}");
 
         // No need to merge
-        if (a == b) return a;
-
+        if (a == b)
+        {
+            Debug.WriteLine($"Attempted to merge the same circuit twice: {a}");
+            return a;
+        }
         // We migrate to the largest circuit, or else to the first
         // Ensure that a contains the largest circuit
         if (b.JunctionBoxes.Count > a.JunctionBoxes.Count)
             (a, b) = (b, a);
 
-        Debug.WriteLine($"Migrating junctionboxes from circuit {b} to {a}");
+        //Debug.WriteLine($"Migrating junctionboxes from circuit {b} to {a}");
 
         var count = 0;
 
@@ -42,8 +45,8 @@ public class Circuit
         // Remove all junctionboxes from b circuit (after they migrated to a circuit)
         b.JunctionBoxes.Clear();
 
-        Debug.WriteLine($"Migrated {count} junctionboxes");
-        Debug.WriteLine($"Circuit {a} now contains {a.JunctionBoxes.Count} JunctionBoxes");
+        //Debug.WriteLine($"Migrated {count} junctionboxes");
+        //Debug.WriteLine($"Circuit {a} now contains {a.JunctionBoxes.Count} JunctionBoxes");
 
         return a;
     }

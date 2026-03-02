@@ -7,27 +7,51 @@ internal static class Calculations
         var junctionBoxes = input.ToJunctionBoxes();
         var circuits = junctionBoxes.Select(jb => jb.Circuit).ToList();
         var distances = GetDistances(junctionBoxes);
+        (JunctionBoxPosition a, JunctionBoxPosition b) lastMerged = default;
 
         // Make the 10 shortest connections
         for (int i = 0; i < connectionsToMake; i++)
         {
             // Can't make more connections if no distances remain
-            if (distances.Count == 0) break;
+            if (distances.Count == 0)
+            {
+                Console.WriteLine("No more connections that we can make");
+                break;
+            }
 
             // The first element in the list contains the two closest junction boxes
             var closest = distances[0];
             distances.RemoveAt(0);
+
+            lastMerged = (closest.A.Position, closest.B.Position);
+
+            //Debug.WriteLine($"{closest.A.Position} + {closest.B.Position}");
 
             // If the 2 closest junction boxes are in the same circuit,
             // no circuits need to be merged
             if (closest.A.Circuit == closest.B.Circuit)
                 continue;
 
-            // Merge the 
+            // Merge the circuits
             Circuit.Merge(closest.A.Circuit, closest.B.Circuit);
 
             // Remove/Forget empty circuits
             circuits.RemoveAll(c => c.JunctionBoxes.Count == 0);
+
+            //Debug.WriteLine($"Circuits: {circuits.Count}");
+
+            if (circuits.Count == 1)
+            {
+                Console.WriteLine("All junctionboxes are in the same circuit!");
+                break;
+            }
+        }
+
+        if (circuits.Count == 1)
+        {
+            Console.WriteLine("Returing the last merge");
+            // The last merge resulted in all junctionboxes being part of one circuit
+            return lastMerged.a.X * (long)lastMerged.b.X;
         }
 
         circuits.Sort(CircuitComparerByJunctionBoxCount.Instance);

@@ -44,10 +44,10 @@ public class Puzzle
         var junctionBoxPositions = JunctionBoxPosition.ParseList(input);
 
         //Act
-        var result = Calculations.Perform(junctionBoxPositions, -1, -1);
+        var result = Calculations.Perform(junctionBoxPositions, int.MaxValue, -1);
 
         //Assert
-        Assert.AreEqual(00000000, result);
+        Assert.AreEqual(25272, result);
     }
 
     [TestMethod]
@@ -58,9 +58,10 @@ public class Puzzle
         var junctionBoxPositions = JunctionBoxPosition.ParseList(input);
 
         //Act
-        var result = Calculations.Perform(junctionBoxPositions, -1, -1);
+        var result = Calculations.Perform(junctionBoxPositions, int.MaxValue, -1);
 
         //Assert
         Console.WriteLine($"Result: {result}");
+        Assert.AreEqual(9617397716, result);
     }
 }
