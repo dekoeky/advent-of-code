@@ -8,6 +8,7 @@
 - [Day 06](./Day06/Puzzle.cs)
 - [Day 07](./Day07/Puzzle.cs)
 - [Day 08](./Day08/Puzzle.cs)
+- [Day 09](./Day09/Puzzle.cs)
 - [Day 11](./Day11/Puzzle.cs)
 
 [Back To Main](../../README.md)
