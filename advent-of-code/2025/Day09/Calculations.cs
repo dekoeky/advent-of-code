@@ -21,7 +21,7 @@ internal static class Calculations
                 var w = Math.Abs(b.Col - a.Col) + 1;
                 var h = Math.Abs(b.Row - a.Row) + 1;
 
-                var area = w * h;
+                var area = w * (long)h;
                 if (area > largest) largest = area;
             }
 
