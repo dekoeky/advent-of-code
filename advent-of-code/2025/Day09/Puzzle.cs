@@ -36,7 +36,7 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        var result = Calculations.Perform2(input);
+        var result = Calculations.Perform3(input);
 
         //Assert
         Assert.AreEqual(24, result);
@@ -49,9 +49,11 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        var result = Calculations.Perform2(input);
+        throw new NotImplementedException("dead end");
+        var result = Calculations.Perform3(input);
 
         //Assert
+        Assert.IsLessThan(2147380284, result);
         Console.WriteLine($"Result: {result}");
     }
 }

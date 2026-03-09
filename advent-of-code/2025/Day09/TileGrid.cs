@@ -90,7 +90,7 @@ public class TileGrid(char[][] tiles, RowCol[] redTiles)
             {
                 var a = RedTiles[i];
                 var b = RedTiles[j];
-                var area = a.rectangleArea(b);
+                var area = a.RectangleArea(b);
 
                 // No need to check if valid, since it wont result in a new largest result anyway
                 if (area <= largest) continue;
