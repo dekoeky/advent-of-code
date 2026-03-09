@@ -26,7 +26,7 @@ public class Puzzle
 
         //Assert
         Console.WriteLine($"Result: {result}");
-        Assert.Equals(1381, result);
+        Assert.AreEqual(1381, result);
     }
 
     [TestMethod]
