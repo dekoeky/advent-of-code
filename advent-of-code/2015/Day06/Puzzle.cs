@@ -4,7 +4,7 @@
 public class Puzzle
 {
     [TestMethod]
-    [DataRow("turn on 0,0 through 999,999", Command.Toggle, 0, 0, 999, 999)]
+    [DataRow("turn on 0,0 through 999,999", Command.TurnOn, 0, 0, 999, 999)]
     [DataRow("toggle 0,0 through 999,0", Command.Toggle, 0, 0, 999, 0)]
     [DataRow("turn off 499,499 through 500,500", Command.TurnOff, 499, 499, 500, 500)]
     public void Part1Examples(string input, Command expectedCommand, int eX1, int eY1, int eX2, int eY2)
