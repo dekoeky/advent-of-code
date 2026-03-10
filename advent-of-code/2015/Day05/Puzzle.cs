@@ -11,7 +11,7 @@ public class Puzzle
     [DataRow("jchzalrnumimnmhp", false)]
     [DataRow("haegwjzuvuyypxyu", false)]
     [DataRow("dvszwmarrgswjxmb", false)]
-    public void Example1(string input, bool expected)
+    public void Part1Examples(string input, bool expected)
     {
         //Act
         var isNice = input.IsNice();
@@ -21,7 +21,7 @@ public class Puzzle
     }
 
     [TestMethod]
-    public void Puzzle1()
+    public void Part1Puzzle()
     {
         //Arrange
         var input = Inputs.Puzzle;
@@ -35,28 +35,30 @@ public class Puzzle
     }
 
     [TestMethod]
-    public void Example2()
+    [DataRow("qjhvhtzxzqqjkmpb", true)]
+    [DataRow("xxyxx", true)]
+    [DataRow("uurcxstgmygtbstg", false)]
+    [DataRow("ieodomkazucvgmuy", false)]
+    public void Part2Examples(string input, bool expectedNice)
     {
-        //Arrange
-        var input = "";
-
         //Act
-        var result = Calculations.Perform(input);
+        var result = input.IsNiceV2();
 
         //Assert
-        Assert.AreEqual(00000000, result);
+        Assert.AreEqual(expectedNice, result);
     }
 
     [TestMethod]
-    public void Puzzle2()
+    public void Part2Puzzle()
     {
         //Arrange
         var input = Inputs.Puzzle;
+        var inputs = SplitOn.NewLines(input);
 
         //Act
-        var result = Calculations.Perform(input);
+        var result = inputs.Count(i => i.IsNiceV2());
 
         //Assert
-        Console.WriteLine($"Result: {result}");
+        Assert.AreEqual(53, result);
     }
 }
