@@ -6,7 +6,7 @@ public class MappingData : IParsable<MappingData>
     public required string To { get; set; }
 
 
-    public Dictionary<NumberType, NumberType> MappedNumbers = [];
+    public Dictionary<ulong, ulong> MappedNumbers = [];
     private static readonly char[] separators = ['\r', '\n'];
 
     public static MappingData Parse(string s, IFormatProvider? provider)

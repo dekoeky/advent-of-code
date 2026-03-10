@@ -1,11 +1,11 @@
 ﻿namespace advent_of_code._2023._05;
 
-public class Almanac : IParsable<Almanac>
+public class Almanac
 {
     public required SeedCollection Seeds { get; set; }
     public required MappingCollection Mapping { get; set; }
 
-    public static Almanac Parse(string s, IFormatProvider? provider)
+    public static Almanac Parse(string s)
     {
         //Split on empty lines
         var parts = s.Split(Environment.NewLine + Environment.NewLine);
@@ -25,17 +25,7 @@ public class Almanac : IParsable<Almanac>
 
     public Mappertje this[string from, string to] => GetMapper(from, to);
 
-    public static Almanac FromFile(string filename) => Parse(File.ReadAllText(filename), null);
-    public static bool TryParse(string? s, IFormatProvider? provider, out Almanac result)
-    {
-        throw new NotImplementedException();
-    }
-
-    public override string ToString()
-    {
-        return
-            "seeds: " + string.Join(" ", Seeds);
-    }
+    public override string ToString() => "seeds: " + string.Join(" ", Seeds);
 
     public IEnumerable<(string, string)> FindPath(string from, string to)
     {
@@ -55,7 +45,7 @@ public class Almanac : IParsable<Almanac>
     public Mappertje GetMapper(string from, string to)
     {
         var path = FindPath(from, to);
-        var action = (NumberType input) =>
+        var action = (ulong input) =>
         {
             foreach (var map in path)
             {
@@ -69,12 +59,12 @@ public class Almanac : IParsable<Almanac>
     }
 }
 
-public class Mappertje(Func<NumberType, NumberType> lookup)
+public class Mappertje(Func<ulong, ulong> lookup)
 {
-    public Func<NumberType, NumberType> Lookup { get; } = lookup;
+    public Func<ulong, ulong> Lookup { get; } = lookup;
 }
 public class MappingCollection(IEnumerable<MappingData> mappings)
 {
-    public Dictionary<(string From, string To), Dictionary<NumberType, NumberType>> Data
+    public Dictionary<(string From, string To), Dictionary<ulong, ulong>> Data
         = mappings.ToDictionary(m => (m.From, m.To), m => m.MappedNumbers);
 }

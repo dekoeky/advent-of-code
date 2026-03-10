@@ -1,9 +1,9 @@
-﻿global using NumberType = ulong;
+﻿
 using System.Collections;
 
 namespace advent_of_code._2023._05;
 
-public class SeedCollection(List<NumberType> items) : IParsable<SeedCollection>, IEnumerable<NumberType>
+public class SeedCollection(List<ulong> items) : IEnumerable<ulong>
 {
     private const string title = "seeds: ";
 
@@ -11,16 +11,12 @@ public class SeedCollection(List<NumberType> items) : IParsable<SeedCollection>,
     {
         if (s.StartsWith(title)) s = s[title.Length..];
         var seeds = s.Split(' ').ToList();
-        var xx = seeds.Select(NumberType.Parse).ToList();
+        var xx = seeds.Select(ulong.Parse).ToList();
         return new SeedCollection(xx);
     }
 
-    public static bool TryParse(string? s, IFormatProvider? provider, out SeedCollection result)
-    {
-        throw new NotImplementedException();
-    }
 
-    public IEnumerator<NumberType> GetEnumerator()
+    public IEnumerator<ulong> GetEnumerator()
     {
         return items.GetEnumerator();
     }
