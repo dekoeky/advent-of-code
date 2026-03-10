@@ -1,3 +1,4 @@
+using advent_of_code.Helpers;
 using System.Text;
 
 namespace advent_of_code._2023._14;
@@ -10,9 +11,9 @@ public class PlatformData(char[/* ROW */, /* COLUMN */] data) : IEquatable<Platf
 
     private readonly char[/* ROW */, /* COLUMN */] _data = data;
     public PlatformData Duplicate() => new(_data.Duplicate());
-    public static PlatformData FromFile(string file)
+    public static PlatformData Parse(string input)
     {
-        var lines = File.ReadAllLines(file);
+        var lines = SplitOn.NewLines(input);
         var R = lines.Length;
         var C = lines.FirstOrDefault()?.Length ?? 0;
 
@@ -30,6 +31,7 @@ public class PlatformData(char[/* ROW */, /* COLUMN */] data) : IEquatable<Platf
     }
     public void Cycle()
     {
+        throw new NotImplementedException("TOO SLOW!");
         ShiftNorth();
         ShiftWest();
         ShiftSouth();
