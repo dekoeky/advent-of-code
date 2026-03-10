@@ -2,5 +2,5 @@
 
 public class InputWithBadKerning(Race[] races) : Input(races)
 {
-    public new static Input FromFile(string file) => Parse(File.ReadAllText(file).Replace(" ", null));
+    public static new Input Parse(string input) => Input.Parse(input.Replace(" ", null));
 }

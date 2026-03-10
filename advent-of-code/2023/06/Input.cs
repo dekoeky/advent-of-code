@@ -1,10 +1,8 @@
 ﻿namespace advent_of_code._2023._06;
 
-public class Input(Race[] races) : IParsable<Input>
+public class Input(Race[] races)
 {
-
-    public static Input FromFile(string file) => Parse(File.ReadAllText(file));
-    public static Input Parse(string s, IFormatProvider? provider = null)
+    public static Input Parse(string s)
     {
         var lines = s.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -14,11 +12,6 @@ public class Input(Race[] races) : IParsable<Input>
         var distances = numbers[1];
 
         return new Input(Race.Combine(times, distances).ToArray());
-    }
-
-    public static bool TryParse(string? s, IFormatProvider? provider, out Input result)
-    {
-        throw new NotImplementedException();
     }
 
 
