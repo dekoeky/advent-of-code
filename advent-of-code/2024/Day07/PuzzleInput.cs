@@ -2,7 +2,7 @@
 
 public class PuzzleInput
 {
-    public List<Equation> Equations { get; set; }
+    public required List<Equation> Equations { get; set; }
 
     public static PuzzleInput Parse(string input)
     {
@@ -11,7 +11,7 @@ public class PuzzleInput
 
         return new PuzzleInput
         {
-            Equations = equations.ToList()
+            Equations = [.. equations]
         };
     }
 }

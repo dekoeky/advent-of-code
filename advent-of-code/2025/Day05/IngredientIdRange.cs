@@ -30,7 +30,7 @@ internal readonly struct IngredientIdRange(long start, long end) : IEnumerable<l
 
     public IEnumerator<long> GetEnumerator()
     {
-        for (var id = start; id <= end; id++)
+        for (var id = Start; id <= End; id++)
             yield return id;
     }
 

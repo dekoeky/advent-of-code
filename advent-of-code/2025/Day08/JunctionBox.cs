@@ -3,7 +3,7 @@
 public class JunctionBox
 {
     public JunctionBoxPosition Position { get; set; }
-    public Circuit Circuit { get; set; }
+    public required Circuit Circuit { get; set; }
 
     public override string ToString()
     {

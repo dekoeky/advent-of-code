@@ -56,10 +56,10 @@ public class TileGrid(char[][] tiles, RowCol[] redTiles)
     {
         // Assume first row and first col is always outside
         for (var r = 0; r < Rows; r++)
-            tiles[r][0] = Tiles[r][Columns - 1] = EmptyTileVisited;
+            Tiles[r][0] = Tiles[r][Columns - 1] = EmptyTileVisited;
 
         for (var c = 0; c < Columns; c++)
-            tiles[0][c] = Tiles[Rows - 1][c] = EmptyTileVisited;
+            Tiles[0][c] = Tiles[Rows - 1][c] = EmptyTileVisited;
 
         foreach (var center in EveryTile())
         {
@@ -125,6 +125,7 @@ public class TileGrid(char[][] tiles, RowCol[] redTiles)
         get => Tiles[rc.Row][rc.Col];
         set => Tiles[rc.Row][rc.Col] = value;
     }
+
     public bool Contains(RowCol rc)
         => rc.Row >= 0
         && rc.Col >= 0

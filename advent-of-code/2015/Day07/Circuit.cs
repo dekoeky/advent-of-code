@@ -15,7 +15,7 @@ public class Circuit
             Instructions = instructions
         };
     }
-    public Dictionary<string, SimpleOperation> Instructions { get; set; }
+    public required Dictionary<string, SimpleOperation> Instructions { get; set; }
     public Dictionary<string, ushort> Values { get; set; } = [];
     public ushort GetOrCalculate(string id)
     {
@@ -35,19 +35,16 @@ public class Circuit
         return result;
     }
 
-    private ushort Execute(SimpleOperation o)
+    private ushort Execute(SimpleOperation o) => o.Op switch
     {
-        switch (o.Op)
-        {
-            case Op.ASSIGN: return ushort.TryParse(o.Left, out var value) ? value : GetOrCalculate(o.Left);
-            case Op.NOT: return (ushort)~GetOrCalculate(o.Right!);
-            case Op.AND: return (ushort)(GetOrCalculate(o.Left) & GetOrCalculate(o.Right));
-            case Op.OR: return (ushort)(GetOrCalculate(o.Left) | GetOrCalculate(o.Right));
-            case Op.LSHIFT: return (ushort)(GetOrCalculate(o.Left) << int.Parse(o.Right));
-            case Op.RSHIFT: return (ushort)(GetOrCalculate(o.Left) >> int.Parse(o.Right));
-            default: throw new NotImplementedException();
-        }
-    }
+        Op.ASSIGN => ushort.TryParse(o.Left, out var value) ? value : GetOrCalculate(o.Left),
+        Op.NOT => (ushort)~GetOrCalculate(o.Right!),
+        Op.AND => (ushort)(GetOrCalculate(o.Left) & GetOrCalculate(o.Right)),
+        Op.OR => (ushort)(GetOrCalculate(o.Left) | GetOrCalculate(o.Right)),
+        Op.LSHIFT => (ushort)(GetOrCalculate(o.Left) << int.Parse(o.Right)),
+        Op.RSHIFT => (ushort)(GetOrCalculate(o.Left) >> int.Parse(o.Right)),
+        _ => throw new NotImplementedException(),
+    };
 }
 
 public record SimpleOperation(Op Op, string Left, string Right)

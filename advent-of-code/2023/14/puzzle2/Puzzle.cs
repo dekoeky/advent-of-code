@@ -36,7 +36,7 @@ public class Puzzle
         Assert.AreEqual(expectedLoad, actualLoad);
     }
 
-    [DataTestMethod]
+    [TestMethod]
     [DataRow("2024/14/puzzle1/input/input.txt", 1000000000)]
     public void Solve(string inputPath, int cycles)
     {

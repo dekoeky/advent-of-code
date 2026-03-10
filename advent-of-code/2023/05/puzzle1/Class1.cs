@@ -3,8 +3,8 @@
 [TestClass]
 public class Class1
 {
-    [DataTestMethod]
-    [DataRow(35)]
+    [TestMethod]
+    [DataRow(35uL)]
     public void Example(NumberType expected)
     {
         var inputFile = "2024/05/puzzle1/input/example.txt";
@@ -25,12 +25,13 @@ public class Class1
             })
             .MinBy(mb => mb.Location);
 
+        Assert.IsNotNull(lowest);
         Assert.AreEqual(expected, lowest.Location);
         Console.WriteLine($"Seed: {lowest.Seed}, Location: {lowest.Location}");
     }
 
     [TestMethod]
-    public void foo()
+    public void Foo()
     {
         var inputFile = "2024/05/puzzle1/input/input.txt";
         var almanac = Almanac.FromFile(inputFile);
@@ -50,6 +51,7 @@ public class Class1
             })
             .MinBy(mb => mb.Location);
 
+        Assert.IsNotNull(lowest);
         Console.WriteLine($"Seed: {lowest.Seed}, Location: {lowest.Location}");
     }
 }

@@ -3,7 +3,7 @@ namespace advent_of_code._2023._14.puzzle1;
 [TestClass]
 public class Puzzle
 {
-    [DataTestMethod]
+    [TestMethod]
     [DataRow("2024/14/puzzle1/input/example-input.txt")]
     [DataRow("2024/14/puzzle1/input/example-shifted.txt")]
     public void ReadAndToString(string file)
@@ -39,7 +39,7 @@ public class Puzzle
         Assert.AreEqual(expectedLoad, actualLoad);
     }
 
-    [DataTestMethod]
+    [TestMethod]
     [DataRow("2024/14/puzzle1/input/input.txt")]
     public void Solve(string inputPath)
     {

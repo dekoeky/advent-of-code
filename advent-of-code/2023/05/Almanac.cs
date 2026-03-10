@@ -2,8 +2,8 @@
 
 public class Almanac : IParsable<Almanac>
 {
-    public SeedCollection Seeds { get; set; }
-    public MappingCollection Mapping { get; set; }
+    public required SeedCollection Seeds { get; set; }
+    public required MappingCollection Mapping { get; set; }
 
     public static Almanac Parse(string s, IFormatProvider? provider)
     {
@@ -59,7 +59,7 @@ public class Almanac : IParsable<Almanac>
         {
             foreach (var map in path)
             {
-                var dictionary = this.Mapping.Data[map];
+                var dictionary = Mapping.Data[map];
                 input = dictionary.TryGetValue(input, out var result) ? result : input;
             }
 

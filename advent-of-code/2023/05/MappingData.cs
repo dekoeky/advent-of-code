@@ -2,22 +2,24 @@
 
 public class MappingData : IParsable<MappingData>
 {
-    public string From { get; set; }
-    public string To { get; set; }
+    public required string From { get; set; }
+    public required string To { get; set; }
 
 
-    public Dictionary<NumberType, NumberType> MappedNumbers = new();
+    public Dictionary<NumberType, NumberType> MappedNumbers = [];
+    private static readonly char[] separators = ['\r', '\n'];
+
     public static MappingData Parse(string s, IFormatProvider? provider)
     {
-        var lines = s.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-        var names = Names.Parse(lines.First());
+        var lines = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+        var (Source, Destination) = Names.Parse(lines.First());
         var specifiedMaps = lines.Skip(1).Select(l => MappedRange.Parse(l, null));
         var mapped = specifiedMaps.SelectMany(m => m.Expand());
 
         return new MappingData()
         {
-            From = names.Source,
-            To = names.Destination,
+            From = Source,
+            To = Destination,
             MappedNumbers = mapped.ToDictionary(kv => kv.Key, kv => kv.Value),
         };
     }
