@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Advent Of Code - Puzzle Template</Title>
+      <Shortcut>aoc-puzzle</Shortcut>
+      <Description>Generates the Puzzle test class with 4 test methods.</Description>
+      <Author>Wesley</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>PuzzleName</ID>
+          <Default>Puzzle</Default>
+        </Literal>
+        <Literal>
+          <ID>Result1</ID>
+          <Default>00000000</Default>
+        </Literal>
+        <Literal>
+          <ID>Result2</ID>
+          <Default>00000000</Default>
+        </Literal>
+        <Literal>
+          <ID>Result3</ID>
+          <Default>00000000</Default>
+        </Literal>
+        <Literal>
+          <ID>Result4</ID>
+          <Default>00000000</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+[TestClass]
+public class $PuzzleName$
+{
+    [TestMethod]
+    public void Part1Example()
+    {
+        var input = Inputs.Example;
+        var result = Calculations.Perform(input);
+        Assert.AreEqual($Result1$, result);
+    }
+
+    [TestMethod]
+    public void Part1Puzzle()
+    {
+        var input = Inputs.Puzzle;
+        var result = Calculations.Perform(input);
+        Assert.AreEqual($Result2$, result);
+    }
+
+    [TestMethod]
+    public void Part2Example()
+    {
+        var input = Inputs.Example;
+        var result = Calculations.Perform(input);
+        Assert.AreEqual($Result3$, result);
+    }
+
+    [TestMethod]
+    public void Part2Puzzle()
+    {
+        var input = Inputs.Puzzle;
+        var result = Calculations.Perform(input);
+        Assert.AreEqual($Result4$, result);
+    }
+}
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
