@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._Templates.DayXX;
+namespace advent_of_code._Templates.DayXX;
 
 [TestClass]
 public class Puzzle
