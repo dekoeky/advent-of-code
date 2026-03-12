@@ -4,7 +4,7 @@
 public class Puzzle
 {
     [TestMethod]
-    public void Example1()
+    public void Part1Example()
     {
         //Arrange
         var input = Inputs.Example;
@@ -17,7 +17,7 @@ public class Puzzle
     }
 
     [TestMethod]
-    public void Puzzle1()
+    public void Part1Puzzle()
     {
         //Arrange
         var input = Inputs.Puzzle;
@@ -26,11 +26,11 @@ public class Puzzle
         var result = Calculations.Perform(input);
 
         //Assert
-        Console.WriteLine($"Result: {result}");
+        Assert.AreEqual(00000000, result);
     }
 
     [TestMethod]
-    public void Example2()
+    public void Part2Example()
     {
         //Arrange
         var input = Inputs.Example;
@@ -43,7 +43,7 @@ public class Puzzle
     }
 
     [TestMethod]
-    public void Puzzle2()
+    public void Part2Puzzle()
     {
         //Arrange
         var input = Inputs.Puzzle;
@@ -52,6 +52,6 @@ public class Puzzle
         var result = Calculations.Perform(input);
 
         //Assert
-        Console.WriteLine($"Result: {result}");
+        Assert.AreEqual(00000000, result);
     }
 }
