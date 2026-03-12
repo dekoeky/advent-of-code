@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 namespace advent_of_code._2025.Day09;
 
@@ -137,7 +137,7 @@ public class TileGrid(char[][] tiles, RowCol[] redTiles)
     {
         return;
         if (title is not null) Console.WriteLine(title);
-        foreach (var line in tiles)
+        foreach (var line in Tiles)
         {
             foreach (char c in line)
                 Console.Write(c);
