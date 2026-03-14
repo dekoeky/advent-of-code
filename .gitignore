@@ -397,3 +397,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Environment variable files
+*.env
+
+# star-tracking data
+star-tracking/data/
