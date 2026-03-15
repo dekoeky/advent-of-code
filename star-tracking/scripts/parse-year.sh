@@ -2,7 +2,6 @@
 set -euo pipefail
 
 HTML_FILE="${1:-year.html}"
-# echo "[DEBUG] Parsing HTML file: $HTML_FILE"
 
 if [[ ! -f "$HTML_FILE" ]]; then
     echo "ERROR: File not found: $HTML_FILE" >&2
@@ -18,11 +17,6 @@ fi
 
 # Match the opening tag
 rows=$(grep -oP '<a\b[^>]*\bcalendar-day[0-9]{1,2}\b[^>]*>' "$HTML_FILE")
-
-# echo "[DEBUG] ==============================================="
-# echo "[DEBUG] Extracted rows:"
-# echo "$rows"
-# echo "[DEBUG] ==============================================="
 
 echo "{"
 echo "  \"days\": ["

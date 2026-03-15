@@ -7,7 +7,7 @@ if [[ -z "$AOC_SESSION" ]]; then
     exit 1
 fi
 
-DATA_DIR="data"
+DATA_DIR="star-tracking/data"
 HTML_DIR="${DATA_DIR}/html"
 JSON_DIR="${DATA_DIR}/json"
 

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SUMMARY_JSON="${1:-data/json/events.json}"
-OUTPUT_MD="README.md"
+OUTPUT_MD="star-tracking/README.md"
 
 {
   echo "# ⭐ Advent of Code Progress"
