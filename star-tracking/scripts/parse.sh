@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DATA_DIR="data"
+DATA_DIR="star-tracking/data"
 HTML_DIR="${DATA_DIR}/html"
 JSON_DIR="${DATA_DIR}/json"
 
@@ -9,7 +9,7 @@ EVENTS_JSON="${JSON_DIR}/events.json"
 SUMMARY_JSON="${JSON_DIR}/summary.json"
 
 if [[ ! -f "$EVENTS_JSON" ]]; then
-    echo "ERROR: $EVENTS_JSON not found. Run ./download.sh first." >&2
+    echo "ERROR: $EVENTS_JSON not found. Run download.sh first." >&2
     exit 1
 fi
 
