@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SUMMARY_JSON="${1:-data/json/events.json}"
+SUMMARY_JSON="${1:-star-tracking/data/json/events.json}"
 OUTPUT_MD="star-tracking/README.md"
 
 {
