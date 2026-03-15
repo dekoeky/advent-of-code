@@ -69,15 +69,19 @@ jobs:
         if: steps.json_changed.outputs.changed == 'false'
         run: echo "JSON unchanged — stopping early."
 
-      - name: Generate Markdown
+      - name: Update README.md
         if: steps.json_changed.outputs.changed == 'true'
-        run: ./star-tracking/scripts/create-markdown.sh star-tracking/data/json/events.json
+        run: |
+          ./star-tracking/scripts/create-markdown.sh \
+            | ./star-tracking/scripts/inject-stars.sh README.md \
+            > README.md.tmp \
+            && mv README.md.tmp README.md
 
       - name: Commit updated markdown
         if: steps.json_changed.outputs.changed == 'true'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add star-tracking/*.md
+          git add README.md
           git commit -m "Update Advent of Code progress" || echo "Nothing to commit"
           git push
