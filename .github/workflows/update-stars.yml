@@ -1,6 +1,8 @@
 name: Update Stars 💫
 run-name: Retrieving Stars 💫💫💫
 
+permissions:
+  contents: write
 
 on:
   push:
