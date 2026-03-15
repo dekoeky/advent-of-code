@@ -30,7 +30,7 @@ for YEAR in $YEARS; do
     fi
 
     echo "    Parsing year $YEAR..."
-    YEAR_JSON=$(./scripts/parse-year.sh "$YEAR_HTML")
+    YEAR_JSON=$(./star-tracking/scripts/parse-year.sh "$YEAR_HTML")
 
     if [[ $first -eq 0 ]]; then
         TMP_JSON_LIST="${TMP_JSON_LIST},"

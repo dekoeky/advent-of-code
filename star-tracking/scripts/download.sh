@@ -17,10 +17,10 @@ EVENTS_JSON="${JSON_DIR}/events.json"
 mkdir -p "$HTML_DIR" "$JSON_DIR"
 
 echo "==> Downloading events page..."
-./scripts/download-events.sh "$AOC_SESSION" > "$EVENTS_HTML"
+./star-tracking/scripts/download-events.sh "$AOC_SESSION" > "$EVENTS_HTML"
 
 echo "==> Parsing events page..."
-./scripts/parse-events.sh "$EVENTS_HTML" > "$EVENTS_JSON"
+./star-tracking/scripts/parse-events.sh "$EVENTS_HTML" > "$EVENTS_JSON"
 
 YEARS=$(jq -r '.years[].year' "$EVENTS_JSON")
 # echo "==> Available years: $YEARS"
@@ -28,7 +28,7 @@ YEARS=$(jq -r '.years[].year' "$EVENTS_JSON")
 for YEAR in $YEARS; do
     OUTFILE="${HTML_DIR}/${YEAR}.html"
     echo "==> Downloading year $YEAR..."
-    ./scripts/download-year.sh "$YEAR" "$AOC_SESSION" > "$OUTFILE"
+    ./star-tracking/scripts/download-year.sh "$YEAR" "$AOC_SESSION" > "$OUTFILE"
 done
 
 echo "==> Download complete."
