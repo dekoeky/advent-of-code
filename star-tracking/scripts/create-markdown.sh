@@ -2,11 +2,10 @@
 set -euo pipefail
 
 SUMMARY_JSON="${1:-star-tracking/data/json/events.json}"
-OUTPUT_MD="star-tracking/README.md"
 
 {
-  echo "# ⭐ Advent of Code Progress"
-  echo
+  # echo "# ⭐ Advent of Code Progress"
+  # echo
 
   # Per-year badges
   jq -r '
@@ -19,4 +18,4 @@ OUTPUT_MD="star-tracking/README.md"
   jq -r '
     "[![Total Stars](https://img.shields.io/badge/Total-\(.total.achieved)_/_\(.total.achievable)_%E2%AD%90-purple?style=for-the-badge)](https://adventofcode.com/events)  "
   ' "$SUMMARY_JSON"
-} > "$OUTPUT_MD"
+}
