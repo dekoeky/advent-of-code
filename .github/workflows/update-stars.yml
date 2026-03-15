@@ -1,4 +1,6 @@
 name: Update Stars 💫
+run-name: Retrieving Stars 💫💫💫
+
 
 on:
   push:
@@ -66,7 +68,7 @@ jobs:
 
       - name: Generate Markdown
         if: steps.json_changed.outputs.changed == 'true'
-        run: ./star-tracking/scripts/create-markdown.sh
+        run: ./star-tracking/scripts/create-markdown.sh star-tracking/data/json/events.json
 
       - name: Commit updated markdown
         if: steps.json_changed.outputs.changed == 'true'
