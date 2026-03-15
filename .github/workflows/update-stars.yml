@@ -10,7 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync:
+  update-stars:
+    name: Update Advent of Code Achieved Stars
     runs-on: ubuntu-latest
 
     steps:
