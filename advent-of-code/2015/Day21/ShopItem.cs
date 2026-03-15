@@ -1,4 +1,4 @@
-namespace advent_of_code._Templates.Day21;
+namespace advent_of_code._2015.Day21;
 
 internal record ShopItem(string Name, int Cost, int Damage, int Armor)
 {

@@ -1,4 +1,4 @@
-namespace advent_of_code._Templates.Day22;
+namespace advent_of_code._2015.Day22;
 
 public record GameState(
     int PlayerHp,

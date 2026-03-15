@@ -1,9 +1,7 @@
-﻿namespace advent_of_code._Templates.Day17;
+namespace advent_of_code._2015.Day17;
 
 public static class Inputs
 {
-
-
     public const string Puzzle =
         """
         50

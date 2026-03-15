@@ -1,6 +1,6 @@
-﻿using advent_of_code.Helpers;
+using advent_of_code.Helpers;
 
-namespace advent_of_code._Templates.Day17;
+namespace advent_of_code._2015.Day17;
 
 [TestClass]
 public class Puzzle

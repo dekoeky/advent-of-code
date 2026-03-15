@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace advent_of_code._Templates.Day19;
+namespace advent_of_code._2015.Day19;
 
 internal static class Calculations
 {

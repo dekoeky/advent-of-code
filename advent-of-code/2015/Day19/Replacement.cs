@@ -1,6 +1,6 @@
 using advent_of_code.Helpers;
 
-namespace advent_of_code._Templates.Day19;
+namespace advent_of_code._2015.Day19;
 
 internal record Replacement(string From, string To)
 {

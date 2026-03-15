@@ -1,4 +1,4 @@
-namespace advent_of_code._Templates.Day23;
+namespace advent_of_code._2015.Day23;
 
 public record Instruction(Command Command, char Register, int Value)
 {
