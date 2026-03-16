@@ -1,4 +1,14 @@
-# ⭐ Advent of Code Progress
+# ⭐ Star Tracking
+
+This directory contains scripts that can be used to:
+- Download information from advent-of-code.com, using a personal access token.
+- Extract information regarding
+  - Available Years (which year contains puzzles)
+  - Stars archieved/achievable per year/day
+- Create neat looking markdown (see example below)
+- Inject the markdown in a placeholder in your markdown file
+
+## Example Output
 
 [![Advent of Code 2025](https://img.shields.io/badge/2025-19_/_24_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2025)  
 [![Advent of Code 2024](https://img.shields.io/badge/2024-19_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2024)  
