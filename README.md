@@ -1,7 +1,7 @@
 # advent-of-code
 
-Advent of code is an advent calendar, existing of programming puzzles.
-This repo contains my personal solutions for [Advent of Code](https://adventofcode.com/).
+[Advent of Code](https://adventofcode.com/) is an advent calendar, existing of programming puzzles.
+This repo contains my personal solutions for it.
 
 ## ⭐ Advent of Code Progress
 
