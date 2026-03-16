@@ -22,10 +22,10 @@ while read -r row; do
     year=$(echo "$row" | grep -oP '\[\K[0-9]{4}(?=\])')
 
     achieved=$(echo "$row" \
-        | grep -oP 'class="star-count">\K[0-9]+(?=\*)' || echo "null")
+        | grep -oP 'class="star-count">\s*\K[0-9]+(?=\*)' || echo "null")
 
     achievable=$(echo "$row" \
-        | grep -oP 'class="quiet">/\s*\K[0-9]+(?=\*)' || echo "null")
+        | grep -oP 'class="quiet">/\s*\K\d+(?=\*)' || echo "null")
 
     if [[ "$achieved" != "null" ]]; then
         total_achieved=$((total_achieved + achieved))
