@@ -1,5 +1,9 @@
 namespace advent_of_code._Templates.DayXX;
 
+/// <summary>
+/// Year yyyy Day dd solution.
+/// </summary>
+/// <seealso href="https://adventofcode.com/yyyy/day/d"/>
 [TestClass]
 public class Puzzle
 {
