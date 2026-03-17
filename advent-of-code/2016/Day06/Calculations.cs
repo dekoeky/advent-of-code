@@ -1,39 +1,26 @@
-using System.Security.Cryptography;
-using System.Text;
-
 namespace advent_of_code._2016.Day06;
 
 internal static class Calculations
 {
+    private static char MostOccurringCharacter(KeyValuePair<int, Dictionary<char, int>> charCounts)
+        => charCounts.Value.MaxBy(count => count.Value).Key;
+
+    private static char LeastOccurringCharacter(KeyValuePair<int, Dictionary<char, int>> charCounts)
+        => charCounts.Value.MinBy(count => count.Value).Key;
+
+
 
     public static string ErrorCorrect1(ReadOnlySpan<char> input)
-    {
-        var counts = new Dictionary<int, Dictionary<char, int>>();
+        => ErrorCorrect(input, MostOccurringCharacter);
 
-        foreach (var line in input.EnumerateLines())
-        {
-            for (var i = 0; i < line.Length; i++)
-            {
-                if (!counts.TryGetValue(i, out var countsForThisIndex))
-                {
-                    countsForThisIndex = new Dictionary<char, int>();
-                    counts.Add(i, countsForThisIndex);
-                }
-
-                var character = line[i];
-
-                if (countsForThisIndex.TryGetValue(character, out int value))
-                    countsForThisIndex[character] = ++value;
-                else
-                    countsForThisIndex.Add(character, 1);
-            }
-        }
-
-        var resultingChars = counts.Select(c => c.Value.MaxBy(cc => cc.Value).Key).ToArray();
-        return new string(resultingChars);
-    }
-    
     public static string ErrorCorrect2(ReadOnlySpan<char> input)
+        => ErrorCorrect(input, LeastOccurringCharacter);
+
+
+
+    private static string ErrorCorrect(
+        ReadOnlySpan<char> input,
+        Func<KeyValuePair<int, Dictionary<char, int>>, char> winningCharacter)
     {
         var counts = new Dictionary<int, Dictionary<char, int>>();
 
@@ -43,7 +30,7 @@ internal static class Calculations
             {
                 if (!counts.TryGetValue(i, out var countsForThisIndex))
                 {
-                    countsForThisIndex = new Dictionary<char, int>();
+                    countsForThisIndex = [];
                     counts.Add(i, countsForThisIndex);
                 }
 
@@ -56,7 +43,8 @@ internal static class Calculations
             }
         }
 
-        var resultingChars = counts.Select(c => c.Value.MinBy(cc => cc.Value).Key).ToArray();
+        var resultingChars = counts.Select(winningCharacter).ToArray();
+
         return new string(resultingChars);
     }
 }
