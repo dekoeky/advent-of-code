@@ -1,7 +1,7 @@
 using advent_of_code.Helpers;
 using System.Text;
 
-namespace advent_of_code._2023._14;
+namespace advent_of_code._2023.Day14;
 
 public class PlatformData(char[/* ROW */, /* COLUMN */] data) : IEquatable<PlatformData>
 {

@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-namespace advent_of_code._2023._06;
+namespace advent_of_code._2023.Day06;
 
 public static class NumberExtensions
 {

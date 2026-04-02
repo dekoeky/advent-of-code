@@ -1,4 +1,4 @@
-namespace advent_of_code._2023._14;
+namespace advent_of_code._2023.Day14;
 
 public enum ShiftDirection
 {

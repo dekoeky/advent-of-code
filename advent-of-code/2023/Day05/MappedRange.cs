@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2023._05;
+﻿namespace advent_of_code._2023.Day05;
 
 internal struct MappedRange(ulong DestinationStart, ulong SourceStart, ulong Length) : IParsable<MappedRange>
 {
