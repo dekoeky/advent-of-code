@@ -47,10 +47,11 @@ internal static class Screen
 
         for (var r = 0; r < screen.GetLength(1); r++)
         {
+            if (r > 0)
+                sw.WriteLine();
+
             for (var c = 0; c < screen.GetLength(0); c++)
                 sw.Write(screen[c, r] ? '#' : ' ');
-
-            sw.WriteLine();
         }
 
         return sw.ToString();
