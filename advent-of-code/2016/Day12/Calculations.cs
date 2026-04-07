@@ -1,4 +1,3 @@
-using advent_of_code._2016.Day12.Instructions;
 using advent_of_code.Helpers;
 
 namespace advent_of_code._2016.Day12;
