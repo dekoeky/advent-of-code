@@ -10,7 +10,7 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part1(input);
 
         //Assert
         Assert.AreEqual(35, result);
@@ -23,7 +23,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part1(input);
 
         //Assert
         Assert.AreEqual(525792406, result);
@@ -36,10 +36,10 @@ public class Puzzle
         var input = Inputs.Example;
 
         //Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part2(input);
 
         //Assert
-        Assert.AreEqual(00000000, result);
+        Assert.AreEqual(46, result);
     }
 
     [TestMethod]
@@ -49,9 +49,9 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         //Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part2(input);
 
         //Assert
-        Assert.AreEqual(00000000, result);
+        Assert.AreEqual(79004094, result);
     }
 }
