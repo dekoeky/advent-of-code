@@ -35,17 +35,31 @@ public class Puzzle
         Assert.AreEqual(18626, result);
     }
 
-    //[TestMethod]
-    //public void Part2Puzzle()
-    //{
-    //    // Arrange
-    //    var fav = 1350;
-    //    var maxSteps = 50;
+    [TestMethod]
+    public void Part2Example()
+    {
+        // Arrange
+        const string salt = "abc";
+        const int n = 64;
 
-    //    // Act
-    //    var result = Calculations.Part2(fav, maxSteps);
+        // Act
+        var result = Calculations.Part2(salt, n);
 
-    //    // Assert
-    //    Assert.AreEqual(124, result);
-    //}
+        // Assert
+        Assert.AreEqual(22551, result);
+    }
+
+    [TestMethod]
+    public void Part2Puzzle()
+    {
+        // Arrange
+        const string salt = "ngcjuoqr";
+        const int n = 64;
+
+        // Act
+        var result = Calculations.Part2(salt, n);
+
+        // Assert
+        Assert.AreEqual(20092, result);
+    }
 }
