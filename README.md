@@ -15,10 +15,10 @@ This repo contains my personal solutions for it.
 [![Advent of Code 2019](https://img.shields.io/badge/2019-2_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2019)  
 [![Advent of Code 2018](https://img.shields.io/badge/2018-2_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2018)  
 [![Advent of Code 2017](https://img.shields.io/badge/2017-2_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2017)  
-[![Advent of Code 2016](https://img.shields.io/badge/2016-24_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2016)  
+[![Advent of Code 2016](https://img.shields.io/badge/2016-28_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2016)  
 [![Advent of Code 2015](https://img.shields.io/badge/2015-50_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2015)  
 
-[![Total Stars](https://img.shields.io/badge/Total-136_/_524_%E2%AD%90-purple?style=for-the-badge)](https://adventofcode.com/events)  
+[![Total Stars](https://img.shields.io/badge/Total-140_/_524_%E2%AD%90-purple?style=for-the-badge)](https://adventofcode.com/events)  
 <!-- PROGRESS-MARKDOWN-PLACEHOLDER-END -->
 
 ## Code
