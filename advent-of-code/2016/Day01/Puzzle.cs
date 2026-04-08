@@ -13,23 +13,23 @@ public class Puzzle
     [DataRow("R5, L5, R5, R3", 12)]
     public void Part1Examples(string input, int expectedBlocksAway)
     {
-        //Act
+        // Act
         var result = Calculations.BlocksAwayAfterFollowingInstructions(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedBlocksAway, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.BlocksAwayAfterFollowingInstructions(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(234, result);
     }
 
@@ -37,23 +37,23 @@ public class Puzzle
     [DataRow("R8, R4, R4, R8", 4)]
     public void Part2Example(string input, int expectedBlocksAway)
     {
-        //Act
+        // Act
         var result = Calculations.BlocksAwayAfterSecondVisit(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedBlocksAway, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.BlocksAwayAfterSecondVisit(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(113, result);
     }
 }

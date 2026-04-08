@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day06;
+namespace advent_of_code._2015.Day06;
 
 [TestClass]
 public class Puzzle
@@ -9,10 +9,10 @@ public class Puzzle
     [DataRow("turn off 499,499 through 500,500", Command.TurnOff, 499, 499, 500, 500)]
     public void Part1Examples(string input, Command expectedCommand, int eX1, int eY1, int eX2, int eY2)
     {
-        //Act
+        // Act
         var instruction = Instruction.Parse(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedCommand, instruction.Command);
         Assert.AreEqual(eX1, instruction.X1);
         Assert.AreEqual(eY1, instruction.Y1);
@@ -23,26 +23,26 @@ public class Puzzle
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var lightsOn = Calculations.Perform(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(569999, lightsOn);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Perform2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(17836115, result);
     }
 }

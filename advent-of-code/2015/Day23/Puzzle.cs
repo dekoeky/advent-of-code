@@ -6,7 +6,7 @@ public class Puzzle
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
         var registerSeedValues = new Dictionary<char, uint>()
         {
@@ -14,17 +14,17 @@ public class Puzzle
             { 'b', 0 },
         };
 
-        //Act
+        // Act
         var result = Calculations.Perform(input, 'a', registerSeedValues);
 
-        //Assert
+        // Assert
         Assert.AreEqual(2u, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var registerSeedValues = new Dictionary<char, uint>()
         {
@@ -32,17 +32,17 @@ public class Puzzle
             { 'b', 0 },
         };
 
-        //Act
+        // Act
         var result = Calculations.Perform(input, 'b', registerSeedValues);
 
-        //Assert
+        // Assert
         Assert.AreEqual(170u, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var registerSeedValues = new Dictionary<char, uint>()
         {
@@ -50,10 +50,10 @@ public class Puzzle
             { 'b', 0 },
         };
 
-        //Act
+        // Act
         var result = Calculations.Perform(input, 'b', registerSeedValues);
 
-        //Assert
+        // Assert
         Assert.AreEqual(247u, result);
     }
 }

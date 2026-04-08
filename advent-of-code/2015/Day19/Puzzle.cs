@@ -6,26 +6,26 @@ public class Puzzle
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var input = PuzzleInput.Parse(Inputs.Part1Example);
 
-        //Act
+        // Act
         var result = Calculations.DistinctMutationsCount(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(4, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = PuzzleInput.Parse(Inputs.Puzzle);
 
-        //Act
+        // Act
         var result = Calculations.DistinctMutationsCount(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(535, result);
     }
 
@@ -42,28 +42,28 @@ public class Puzzle
     [DataRow("HOHOHO", 6)]
     public void Part2Examples(string target, int expected)
     {
-        //Arrange
+        // Arrange
         var input = PuzzleInput.Parse(Inputs.Part2Example);
         var start = "e";
 
-        //Act
+        // Act
         var result = Calculations.MinStepsToReachTarget(input.Replacements, start, target);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = PuzzleInput.Parse(Inputs.Puzzle);
         var start = "e";
 
-        //Act
+        // Act
         var result = Calculations.MinStepsToReachTarget(input.Replacements, start, input.Input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(212, result);
     }
 }

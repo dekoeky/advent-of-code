@@ -10,42 +10,42 @@ public class Puzzle
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var initialState = "10000";
         var length = 20;
 
-        //Act
+        // Act
         var result = Calculations.Execute(initialState, length);
 
-        //Assert
+        // Assert
         Assert.AreEqual("01100", result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var initialState = "11110010111001001";
         var length = 272;
 
-        //Act
+        // Act
         var result = Calculations.Execute(initialState, length);
 
-        //Assert
+        // Assert
         Assert.AreEqual("01110011101111011", result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var initialState = "11110010111001001";
         var length = 35651584;
 
-        //Act
+        // Act
         var result = Calculations.Execute(initialState, length);
 
-        //Assert
+        // Assert
         Assert.AreEqual("11001111011000111", result);
     }
 }

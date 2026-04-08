@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day08;
+namespace advent_of_code._2024.Day08;
 
 [TestClass]
 public class Puzzle
@@ -6,36 +6,36 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Example);
 
-        //Act
+        // Act
         var antiNodePositions = Calculations.UniqueAndValidAntiNodePositions(map, false);
 
-        //Assert
+        // Assert
         Assert.AreEqual(14, antiNodePositions.Length);
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Puzzle);
 
-        //Act
+        // Act
         var antiNodePositions = Calculations.UniqueAndValidAntiNodePositions(map, false);
 
-        //Assert
+        // Assert
         Console.WriteLine(antiNodePositions.Length);
     }
 
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Example);
 
-        //Act
+        // Act
         var antiNodePositions = Calculations.UniqueAndValidAntiNodePositions(map, true);
 
         ////Debug:
@@ -44,20 +44,20 @@ public class Puzzle
         //Console.WriteLine(String2D.Array2DToString(map2));
 
 
-        //Assert
+        // Assert
         Assert.AreEqual(34, antiNodePositions.Length);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Puzzle);
 
-        //Act
+        // Act
         var antiNodePositions = Calculations.UniqueAndValidAntiNodePositions(map, true);
 
-        //Assert
+        // Assert
         Console.WriteLine(antiNodePositions.Length);
     }
 }

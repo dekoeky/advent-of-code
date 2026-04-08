@@ -14,23 +14,23 @@ public class Puzzle
     [DataRow("ulqzkmiv", "DRURDRUDDLLDLUURRDULRLDUUDDDRR")]
     public void Part1Examples(string passCode, string expectedShortestPath)
     {
-        //Act
+        // Act
         var shortestPath = Calculations.ShortestPath(passCode);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedShortestPath, shortestPath);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var passCode = "ioramepc";
 
-        //Act
+        // Act
         var result = Calculations.ShortestPath(passCode);
 
-        //Assert
+        // Assert
         Assert.AreEqual("RDDRULDDRR", result);
     }
 
@@ -40,23 +40,23 @@ public class Puzzle
     [DataRow("ulqzkmiv", 830)]
     public void Part2Examples(string passCode, int expectedShortestPath)
     {
-        //Act
+        // Act
         var longestPath = Calculations.LongestPath(passCode);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedShortestPath, longestPath.Length);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var passCode = "ioramepc";
 
-        //Act
+        // Act
         var longestPath = Calculations.LongestPath(passCode);
 
-        //Assert
+        // Assert
         Assert.AreEqual(766, longestPath.Length);
     }
 }

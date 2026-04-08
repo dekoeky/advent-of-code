@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day20;
+namespace advent_of_code._2024.Day20;
 
 [TestClass]
 public class Puzzle
@@ -6,25 +6,25 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.CountNumberOfShortcutsSavingAtLeast100PicoSeconds(input);
 
-        //Assert
+        // Assert
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.CountNumberOfShortcutsSavingAtLeast100PicoSeconds(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Result: {result}");
         Assert.AreEqual(1381, result);
     }
@@ -32,26 +32,26 @@ public class Puzzle
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.CountNumberOfShortcutsSavingAtLeast100PicoSeconds(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(00000000, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.CountNumberOfShortcutsSavingAtLeast100PicoSeconds(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Result: {result}");
     }
 }

@@ -6,52 +6,52 @@ public class Puzzle
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.Part1(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(35, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Part1(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(525792406, result);
     }
 
     [TestMethod]
     public void Part2Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.Part2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(46, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Part2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(79004094, result);
     }
 }

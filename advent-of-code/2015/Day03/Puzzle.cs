@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day03;
+namespace advent_of_code._2015.Day03;
 
 [TestClass]
 public class Puzzle
@@ -9,23 +9,23 @@ public class Puzzle
     [DataRow(2, "^v^v^v^v^v")]
     public void Part1Examples(int expected, string input)
     {
-        //Act
+        // Act
         var result = Calculations.Perform(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Perform(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(2592, result);
     }
 
@@ -36,23 +36,23 @@ public class Puzzle
     [DataRow(11, "^v^v^v^v^v")]
     public void Part2Examples(int expected, string input)
     {
-        //Act
+        // Act
         var result = Calculations.Perform2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Perform2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(2360, result);
     }
 }

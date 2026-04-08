@@ -8,27 +8,27 @@ public class Puzzle
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         int visits = 10;
 
-        //Act
+        // Act
         var result = Calculations.Part1(Input, visits);
 
-        //Assert
+        // Assert
         Assert.AreEqual(831600, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var visits = 11;
         var limit = 50;
 
-        //Act
+        // Act
         var result = Calculations.Part2(Input, visits, limit);
 
-        //Assert
+        // Assert
         Assert.AreEqual(884520, result);
     }
 }

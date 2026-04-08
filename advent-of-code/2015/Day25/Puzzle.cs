@@ -6,10 +6,10 @@ public class Puzzle
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Act
+        // Act
         var result = Calculations.Solve(2947, 3029);
 
-        //Assert
+        // Assert
         Assert.AreEqual(19980801L, result);
     }
 }

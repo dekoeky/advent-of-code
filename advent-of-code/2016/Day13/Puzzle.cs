@@ -10,42 +10,42 @@ public class Puzzle
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var fav = 10;
         var target = (7, 4);
 
-        //Act
+        // Act
         var result = Calculations.Part1(fav, target);
 
-        //Assert
+        // Assert
         Assert.AreEqual(11, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var fav = 1350;
         var target = (31, 39);
 
-        //Act
+        // Act
         var result = Calculations.Part1(fav, target);
 
-        //Assert
+        // Assert
         Assert.AreEqual(92, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var fav = 1350;
         var maxSteps = 50;
 
-        //Act
+        // Act
         var result = Calculations.Part2(fav, maxSteps);
 
-        //Assert
+        // Assert
         Assert.AreEqual(124, result);
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 namespace advent_of_code._2015.Day14;
 
@@ -14,67 +14,67 @@ public class Puzzle
     [DataRow(Inputs.Dancer, 11, 176)]
     public void Part1Examples(string input, int raceTime, int expected)
     {
-        //Arrange
+        // Arrange
         Debug.WriteLine($"Input: {input}");
         Debug.WriteLine($"RaceTime: {raceTime}");
 
-        //Act
+        // Act
         var reindeer = ReindeerInfo.Parse(input);
         var result = reindeer.DistanceAfter(raceTime);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.WinnerByDistanceTraveled(input, 1000);
 
-        //Assert
+        // Assert
         Assert.AreEqual(1120, result);
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.WinnerByDistanceTraveled(input, 2503);
 
-        //Assert
+        // Assert
         Assert.AreEqual(2640, result);
     }
 
     [TestMethod]
     public void Part2Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.WinnerByPoints(input, 1000);
 
-        //Assert
+        // Assert
         Assert.AreEqual(689, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.WinnerByPoints(input, 2503);
 
-        //Assert
+        // Assert
         Assert.AreEqual(1102, result);
     }
 }

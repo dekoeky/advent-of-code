@@ -10,26 +10,26 @@ public class Puzzle
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Part1(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(113, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Part2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(12803, result);
     }
 }

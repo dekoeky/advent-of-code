@@ -1,4 +1,4 @@
-﻿using advent_of_code.Helpers;
+using advent_of_code.Helpers;
 
 namespace advent_of_code._2015.Day05;
 
@@ -13,24 +13,24 @@ public class Puzzle
     [DataRow("dvszwmarrgswjxmb", false)]
     public void Part1Examples(string input, bool expected)
     {
-        //Act
+        // Act
         var isNice = input.IsNice();
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, isNice);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var inputs = SplitOn.NewLines(input);
 
-        //Act
+        // Act
         var result = inputs.Count(i => i.IsNice());
 
-        //Assert
+        // Assert
         Assert.AreEqual(258, result);
     }
 
@@ -41,24 +41,24 @@ public class Puzzle
     [DataRow("ieodomkazucvgmuy", false)]
     public void Part2Examples(string input, bool expectedNice)
     {
-        //Act
+        // Act
         var result = input.IsNiceV2();
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedNice, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var inputs = SplitOn.NewLines(input);
 
-        //Act
+        // Act
         var result = inputs.Count(i => i.IsNiceV2());
 
-        //Assert
+        // Assert
         Assert.AreEqual(53, result);
     }
 }

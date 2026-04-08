@@ -14,23 +14,23 @@ public class Puzzle
     [DataRow("-1, -2, -3", -6)]
     public void Part1Examples(string input, int expected)
     {
-        //Act
+        // Act
         var result = Calculations.ResultingFrequencyCommaSeparated(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.ResultingFrequencyLineSeparated(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(525, result);
     }
 
@@ -41,23 +41,23 @@ public class Puzzle
     [DataRow("+7, +7, -2, -7, -4", 14)]
     public void Part2Examples(string input, int expected)
     {
-        //Act
+        // Act
         var result = Calculations.FirstDuplicateFrequencyCommaSeparated(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.FirstDuplicateFrequencyLineSeparated(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(75749, result);
     }
 }

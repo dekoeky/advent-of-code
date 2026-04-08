@@ -8,28 +8,28 @@ public class Puzzle
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var player = new Character("player", 100, 0, 0);
         var boss = Character.Parse(Inputs.Puzzle, "boss");
 
-        //Act
+        // Act
         var result = Calculations.CheapestWin(player, boss, Shop);
 
-        //Assert
+        // Assert
         Assert.AreEqual(78, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var player = new Character("player", 100, 0, 0);
         var boss = Character.Parse(Inputs.Puzzle, "boss");
 
-        //Act
+        // Act
         var result = Calculations.MostExpensiveLoss(player, boss, Shop);
 
-        //Assert
+        // Assert
         Assert.AreEqual(148, result);
     }
 }

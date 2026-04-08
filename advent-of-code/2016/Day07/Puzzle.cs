@@ -14,23 +14,23 @@ public class Puzzle
     [DataRow("ioxxoj[asdfgh]zxcvbn", true)]
     public void Part1Example(string input, bool expectedSupportsTls)
     {
-        //Act
+        // Act
         var result = IPv7.SupportsTls(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedSupportsTls, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = IPv7.CountTlsSupportingIps(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(115, result);
     }
 
@@ -41,23 +41,23 @@ public class Puzzle
     [DataRow("zazbz[bzb]cdb", true)]
     public void Part2Example(string input, bool expectedSupportsTls)
     {
-        //Act
+        // Act
         var result = IPv7.SupportsSsl(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedSupportsTls, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = IPv7.CountSslSupportingIps(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(231, result);
     }
 }

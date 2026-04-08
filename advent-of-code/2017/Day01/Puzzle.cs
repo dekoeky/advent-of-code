@@ -14,23 +14,23 @@ public class Puzzle
     [DataRow("91212129", 9)]
     public void Part1Examples(string input, int expected)
     {
-        //Act
+        // Act
         var result = Calculations.Perform(input, +1);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Perform(input, +1);
 
-        //Assert
+        // Assert
         Assert.AreEqual(1393, result);
     }
 
@@ -42,24 +42,24 @@ public class Puzzle
     [DataRow("12131415", 4)]
     public void Part2Examples(string input, int expected)
     {
-        //Act
+        // Act
 
         var result = Calculations.Perform(input, input.Length / 2);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.Perform(input, input.Length / 2);
 
-        //Assert
+        // Assert
         Assert.AreEqual(1292, result);
     }
 }

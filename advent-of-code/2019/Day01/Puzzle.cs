@@ -16,24 +16,24 @@ public class Puzzle
     [DataRow(100756, 33583)]
     public void Part1Examples(int mass, int expectedFuel)
     {
-        //Act
+        // Act
         var fuel = Calculations.FuelRequired(mass);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedFuel, fuel);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var masses = SplitOn.NewLines(input).Select(int.Parse);
 
-        //Act
+        // Act
         var fuel = masses.Sum(Calculations.FuelRequired);
 
-        //Assert
+        // Assert
         Assert.AreEqual(3323874, fuel);
     }
 
@@ -42,24 +42,24 @@ public class Puzzle
     [DataRow(1969, 966)]
     public void Part2Examples(int mass, int expected)
     {
-        //Act
+        // Act
         var result = Calculations.FuelRequiredRecursive(mass);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var masses = SplitOn.NewLines(input).Select(int.Parse);
 
-        //Act
+        // Act
         var fuel = masses.Sum(Calculations.FuelRequiredRecursive);
 
-        //Assert
+        // Assert
         Assert.AreEqual(4982961, fuel);
     }
 }

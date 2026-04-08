@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day01;
+namespace advent_of_code._2015.Day01;
 
 /// <summary>
 /// Solves puzzle <see href="https://adventofcode.com/2015/day/1"/>
@@ -18,23 +18,23 @@ public class Puzzle
     [DataRow(-3, ")())())")]
     public void Part1Examples(int expectedFloor, string instructions)
     {
-        //Act
+        // Act
         var result = Calculations.FinalFloor(instructions);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedFloor, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.FinalFloor(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(138, result);
     }
 
@@ -43,23 +43,23 @@ public class Puzzle
     [DataRow(5, "()())")]
     public void Part2Examples(int expectedPosition, string instructions)
     {
-        //Act
+        // Act
         var result = Calculations.BasementEnteredInStep(instructions);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedPosition, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.BasementEnteredInStep(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(1771, result);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day11;
+namespace advent_of_code._2015.Day11;
 
 [TestClass]
 public class Puzzle
@@ -10,10 +10,10 @@ public class Puzzle
     [DataRow("abbceffg", false)]
     public void FirstRequirement(string input, bool expected)
     {
-        //Act
+        // Act
         var result = PasswordRequirements.FirstRequirement(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
@@ -21,10 +21,10 @@ public class Puzzle
     [DataRow("hijklmmn", false)]
     public void SecondRequirement(string input, bool expected)
     {
-        //Act
+        // Act
         var result = PasswordRequirements.SecondRequirement(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
@@ -33,10 +33,10 @@ public class Puzzle
     [DataRow("abbcegjk", false)]
     public void ThirdRequirement(string input, bool expected)
     {
-        //Act
+        // Act
         var result = PasswordRequirements.ThirdRequirement(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
@@ -45,36 +45,36 @@ public class Puzzle
     [DataRow("ghijklmn", "ghjaabcc")]
     public void Part1Example(string input, string expected)
     {
-        //Act
+        // Act
         var newPassword = NewPasswordFinder.FindNext(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, newPassword);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var newPassword = NewPasswordFinder.FindNext(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(SolutionPart1, newPassword);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = SolutionPart1;
 
-        //Act
+        // Act
         var newPassword = NewPasswordFinder.FindNext(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual("heqaabcc", newPassword);
     }
 }

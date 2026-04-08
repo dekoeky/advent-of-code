@@ -9,32 +9,32 @@ public class Puzzle
     [DataRow(Inputs.ExampleShifted)]
     public void ReadAndToString(string input)
     {
-        //Arrange
+        // Arrange
         var expected = input;
 
-        //Act
+        // Act
         var actual = PlatformData.Parse(input).ToString();
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, actual);
     }
 
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         const int expectedLoad = 136;
         var exampleInput = PlatformData.Parse(Inputs.Example);
         var exampleShifted = PlatformData.Parse(Inputs.ExampleShifted);
 
-        //Act
+        // Act
         var shifted = exampleInput.Duplicate();
         shifted.Shift(ShiftDirection.N);
 
         var loadFromShiftedInput = exampleShifted.GetLoad();
         var actualLoad = shifted.GetLoad();
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedLoad, loadFromShiftedInput);
         Assert.AreEqual(expectedLoad, actualLoad);
     }
@@ -42,21 +42,21 @@ public class Puzzle
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = PlatformData.Parse(Inputs.Puzzle);
 
-        //Act
+        // Act
         input.Shift(ShiftDirection.N);
         var load = input.GetLoad();
 
-        //Assert
+        // Assert
         Assert.AreEqual(110407, load);
     }
 
     [TestMethod]
     public void Part2Example()
     {
-        //Arrange
+        // Arrange
         const int expectedLoad = 64;
         const int cycles = 1000000000;
         var workData = PlatformData.Parse(Inputs.Example);
@@ -64,7 +64,7 @@ public class Puzzle
         var exampleCycled2 = PlatformData.Parse(Inputs.ExampleAfterCycle2);
         var exampleCycled3 = PlatformData.Parse(Inputs.ExampleAfterCycle3);
 
-        //Act
+        // Act
         workData.Cycle();
         var cycled1 = workData.Duplicate();
         workData.Cycle();
@@ -75,7 +75,7 @@ public class Puzzle
         workData.Cycle(cycles - 3);
         var actualLoad = workData.GetLoad();
 
-        //Assert
+        // Assert
         Assert.AreEqual(exampleCycled1.ToString(), cycled1.ToString());
         Assert.AreEqual(exampleCycled2.ToString(), cycled2.ToString());
         Assert.AreEqual(exampleCycled3.ToString(), cycled3.ToString());
@@ -85,15 +85,15 @@ public class Puzzle
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         const int cycles = 1000000000;
         var data = PlatformData.Parse(Inputs.Puzzle);
 
-        //Act
+        // Act
         data.Cycle(cycles);
         var load = data.GetLoad();
 
-        //Assert
+        // Assert
         Assert.AreEqual(-1, load);
     }
 }

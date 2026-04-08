@@ -1,4 +1,4 @@
-﻿using advent_of_code.Helpers;
+using advent_of_code.Helpers;
 
 namespace advent_of_code._2015.Day02;
 
@@ -13,27 +13,27 @@ public class Puzzle
     [DataRow(43, "1x1x10")]
     public void Part1Examples(int expectedSquareFeet, string input)
     {
-        //Arrange
+        // Arrange
         var dimension = Dimensions.Parse(input);
 
-        //Act
+        // Act
         var result = dimension.PaperNeeded();
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedSquareFeet, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var dimensions = SplitOn.NewLines(input).Select(Dimensions.Parse);
 
-        //Act
+        // Act
         var result = dimensions.Sum(d => d.PaperNeeded());
 
-        //Assert
+        // Assert
         Assert.AreEqual(1586300, result);
     }
 
@@ -42,27 +42,27 @@ public class Puzzle
     [DataRow(14, "1x1x10")]
     public void Part2Examples(int expected, string input)
     {
-        //Arrange
+        // Arrange
         var dimensions = Dimensions.Parse(input);
 
-        //Act
+        // Act
         var result = dimensions.RibbonNeeded();
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var dimensions = SplitOn.NewLines(input).Select(Dimensions.Parse);
 
-        //Act
+        // Act
         var result = dimensions.Sum(d => d.RibbonNeeded());
 
-        //Assert
+        // Assert
         Assert.AreEqual(3737498, result);
     }
 }

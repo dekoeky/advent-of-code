@@ -10,28 +10,28 @@ public class Puzzle
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var screen = Screen.GetResult(input);
         var result = screen.Count();
 
-        //Assert
+        // Assert
         Assert.AreEqual(110, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var screen = Screen.GetResult(input);
         var result = Screen.ToString(screen);
 
-        //Assert
+        // Assert
         Assert.AreEqual(
             """
             ####   ## #  # ###  #  #  ##  ###  #    #   #  ## 

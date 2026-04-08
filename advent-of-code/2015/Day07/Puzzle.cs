@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day07;
+namespace advent_of_code._2015.Day07;
 
 
 [TestClass]
@@ -10,29 +10,29 @@ public class Puzzle
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var circuit = Circuit.Parse(input);
         var result = circuit.GetOrCalculate("a");
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedResultPart1, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var circuit = Circuit.Parse(input);
         circuit.Instructions["b"] = new SimpleOperation(Op.ASSIGN, expectedResultPart1.ToString(), null!);
         var result = circuit.GetOrCalculate("a");
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedResultPart2, result);
     }
 }

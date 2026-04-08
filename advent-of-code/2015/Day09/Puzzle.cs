@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day09;
+namespace advent_of_code._2015.Day09;
 
 [TestClass]
 public class Puzzle
@@ -6,26 +6,26 @@ public class Puzzle
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         int length = Calculations.ShortestRoute(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(605, length);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         int length = Calculations.ShortestRoute(input);
 
-        //Assert
+        // Assert
         Assert.IsLessThan(316, length);
         Assert.AreEqual(141, length);
     }
@@ -33,26 +33,26 @@ public class Puzzle
     [TestMethod]
     public void Part2Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         int length = Calculations.LongestRoute(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(982, length);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         int length = Calculations.LongestRoute(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(736, length);
     }
 }

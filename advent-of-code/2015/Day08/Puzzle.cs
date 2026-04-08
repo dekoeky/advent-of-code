@@ -1,4 +1,4 @@
-﻿using advent_of_code.Helpers;
+using advent_of_code.Helpers;
 
 namespace advent_of_code._2015.Day08;
 
@@ -20,11 +20,11 @@ public class Puzzle
              """, 6, 1)]
     public void Part1Examples(string input, int expectedCodeLength, int expectedStringLength)
     {
-        //Act
+        // Act
         var codeLength = input.Length;
         int stringLength = Calculations.GetStringLength(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedCodeLength, codeLength);
         Assert.AreEqual(expectedStringLength, stringLength);
     }
@@ -44,24 +44,24 @@ public class Puzzle
              """, 6 - 1)]
     public void Part1Examples(string input, int expectedDelta)
     {
-        //Act;
+        // Act;
         int delta = Calculations.Delta1(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedDelta, delta);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var lines = SplitOn.NewLines(input);
 
-        //Act
+        // Act
         int delta = lines.Sum(Calculations.Delta1);
 
-        //Assert
+        // Assert
         Assert.AreEqual(1371, delta);
     }
 
@@ -80,24 +80,24 @@ public class Puzzle
              """, 11 - 6)]
     public void Part2Example(string input, int expectedEncodedLength)
     {
-        //Act
+        // Act
         var encodedLength = Calculations.Delta2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedEncodedLength, encodedLength);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var lines = SplitOn.NewLines(input);
 
-        //Act
+        // Act
         int delta = lines.Sum(Calculations.Delta2);
 
-        //Assert
+        // Assert
         Assert.AreEqual(2117, delta);
     }
 }

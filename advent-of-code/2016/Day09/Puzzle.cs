@@ -16,24 +16,24 @@ public class Puzzle
     [DataRow("X(8x2)(3x3)ABCY", "X(3x3)ABC(3x3)ABCY")]
     public void Part1Examples(string input, string expected)
     {
-        //Act
+        // Act
         var result = Calculations.DecompressV1(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.DecompressV1(input);
         var count = result.Count(c => !char.IsWhiteSpace(c));
 
-        //Assert
+        // Assert
         Assert.AreEqual(97714, count);
     }
 
@@ -44,23 +44,23 @@ public class Puzzle
     [DataRow("(25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN", 445L)]
     public void Part2Examples(string input, long expected)
     {
-        //Act
+        // Act
         var result = Calculations.DecompressV2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.DecompressV2(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(10762972461L, result);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2025.Day05;
+namespace advent_of_code._2025.Day05;
 
 [TestClass]
 public class Puzzle
@@ -6,52 +6,52 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.HowManyIngredientsAreFresh(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(3, result);
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.HowManyIngredientsAreFresh(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Result: {result}");
     }
 
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.CountIngredientIdsInFreshRange(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(14, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.CountIngredientIdsInFreshRange(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Result: {result}");
     }
 }

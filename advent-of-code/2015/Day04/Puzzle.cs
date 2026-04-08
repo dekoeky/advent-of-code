@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day04;
+namespace advent_of_code._2015.Day04;
 
 [TestClass]
 public class Puzzle
@@ -10,36 +10,36 @@ public class Puzzle
     [DataRow("pqrstuv", 1048970)]
     public void Example1(string key, int expected)
     {
-        //Act
+        // Act
         var result = Calculations.Perform(key, 5);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var key = puzzleKey;
 
-        //Act
+        // Act
         var result = Calculations.Perform(key, 5);
 
-        //Assert
+        // Assert
         Assert.AreEqual(254575, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = puzzleKey;
 
-        //Act
+        // Act
         var result = Calculations.Perform(input, 6);
 
-        //Assert
+        // Assert
         Assert.AreEqual(1038736, result);
     }
 }

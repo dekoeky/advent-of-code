@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day12;
+namespace advent_of_code._2015.Day12;
 
 [TestClass]
 public class Puzzle
@@ -14,23 +14,23 @@ public class Puzzle
     [DataRow("{}", 0)]
     public void Part1Examples(string input, int expectedSum)
     {
-        //Act
+        // Act
         var result = Calculations.JsonSum(input, false);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedSum, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.JsonSum(input, false);
 
-        //Assert
+        // Assert
         Assert.AreEqual(119433, result);
     }
 
@@ -41,23 +41,23 @@ public class Puzzle
     [DataRow("[1,\"red\",5]", 6)]
     public void Part2Examples(string input, int expectedSum)
     {
-        //Act
+        // Act
         var result = Calculations.JsonSum(input, true);
 
-        //Assert
+        // Assert
         Assert.AreEqual(expectedSum, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.JsonSum(input, true);
 
-        //Assert
+        // Assert
         Assert.AreEqual(68466, result);
     }
 }

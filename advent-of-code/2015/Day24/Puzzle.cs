@@ -6,56 +6,56 @@ public class Puzzle
     [TestMethod]
     public void Part1Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
         var weights = Weights.Parse(input);
 
-        //Act
+        // Act
         var result = Calculations.Solve(weights, 3);
 
-        //Assert
+        // Assert
         Assert.AreEqual(99, result);
     }
 
     [TestMethod]
     public void Part1Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var weights = Weights.Parse(input);
 
-        //Act
+        // Act
         var result = Calculations.Solve(weights, 3);
 
-        //Assert
+        // Assert
         Assert.AreEqual(10723906903L, result);
     }
 
     [TestMethod]
     public void Part2Example()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
         var weights = Weights.Parse(input);
 
-        //Act
+        // Act
         var result = Calculations.Solve(weights, 4);
 
-        //Assert
+        // Assert
         Assert.AreEqual(44, result);
     }
 
     [TestMethod]
     public void Part2Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var weights = Weights.Parse(input);
 
-        //Act
+        // Act
         var result = Calculations.Solve(weights, 4);
 
-        //Assert
+        // Assert
         Assert.AreEqual(74850409L, result);
     }
 }
