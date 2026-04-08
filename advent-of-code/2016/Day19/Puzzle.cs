@@ -14,10 +14,10 @@ public class Puzzle
         var elves = 5;
 
         // Act
-        var shortestPath = Calculations.SolvePart1(elves);
+        var winningElve = Calculations.SolvePart1(elves);
 
         // Assert
-        Assert.AreEqual(3, shortestPath);
+        Assert.AreEqual(3, winningElve);
     }
 
     [TestMethod]
@@ -27,10 +27,10 @@ public class Puzzle
         var elves = 3018458;
 
         // Act
-        var shortestPath = Calculations.SolvePart1(elves);
+        var winningElve = Calculations.SolvePart1(elves);
 
         // Assert
-        Assert.AreEqual(1842613, shortestPath);
+        Assert.AreEqual(1842613, winningElve);
     }
 
     [TestMethod]
@@ -40,10 +40,10 @@ public class Puzzle
         var elves = 5;
 
         // Act
-        var shortestPath = Calculations.SolvePart2(elves);
+        var winningElve = Calculations.SolvePart2(elves);
 
         // Assert
-        Assert.AreEqual(2, shortestPath);
+        Assert.AreEqual(2, winningElve);
     }
 
     [TestMethod]
@@ -53,9 +53,9 @@ public class Puzzle
         var elves = 3018458;
 
         // Act
-        var shortestPath = Calculations.SolvePart2(elves);
+        var winningElve = Calculations.SolvePart2(elves);
 
         // Assert
-        Assert.AreEqual(1424135, shortestPath);
+        Assert.AreEqual(1424135, winningElve);
     }
 }

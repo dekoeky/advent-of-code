@@ -15,10 +15,10 @@ public class Puzzle
         var rows = 10;
 
         // Act
-        var shortestPath = Calculations.SafeRows(input, rows);
+        var result = Calculations.SafeRows(input, rows);
 
         // Assert
-        Assert.AreEqual(38, shortestPath);
+        Assert.AreEqual(38, result);
     }
 
     [TestMethod]
