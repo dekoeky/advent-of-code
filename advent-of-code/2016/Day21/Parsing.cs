@@ -1,6 +1,7 @@
+using advent_of_code._2016.Day21.Operations;
 using advent_of_code.Helpers;
 
-namespace advent_of_code._2016.Day21.Operations;
+namespace advent_of_code._2016.Day21;
 
 internal static partial class Parsing
 {
