@@ -35,50 +35,14 @@ internal static class Calculations
             .Select(Instruction.Parse)
             .ToArray();
 
-        var nextInstruction = 0;
-
-        while (nextInstruction >= 0 && nextInstruction < instructions.Length)
+        var cpu = new InstructionProcessor
         {
-            var instruction = instructions[nextInstruction];
+            Instructions = instructions,
+            Registers = registers,
+        };
 
-            switch (instruction)
-            {
-                case CopyValueInstruction cv:
-                    registers[cv.TargetRegister] = cv.Value;
-                    break;
+        cpu.ExecuteTillFinished();
 
-                case CopyRegisterInstruction cr:
-                    registers[cr.TargetRegister] = registers[cr.SourceRegister];
-                    break;
-
-                case IncreaseInstruction inc:
-                    registers[inc.Register]++;
-                    break;
-
-                case DecreaseInstruction dec:
-                    registers[dec.Register]--;
-                    break;
-
-                case JumpIfValueNotZeroInstruction jv:
-                    if (jv.Value == 0)
-                        break;
-
-                    nextInstruction += jv.Offset;
-                    continue;
-
-                case JumpIfRegisterNotZeroInstruction jr:
-                    if (registers[jr.Register] == 0)
-                        break;
-
-                    nextInstruction += jr.Offset;
-                    continue;
-
-                default: throw new NotImplementedException();
-            }
-
-            nextInstruction++;
-        }
-
-        return registers['a'];
+        return cpu.Registers['a'];
     }
 }

@@ -33,7 +33,12 @@ internal abstract record Instruction
                     ? new JumpIfValueNotZeroInstruction(jumpValue, offset)
                     : new JumpIfRegisterNotZeroInstruction(parts[1][0], offset);
 
-            default: throw new InvalidOperationException();
+
+            // Day 25 Extended instruction set:
+            case "out":
+                return new Day25.OutInstruction(parts[1][0]);
+
+            default: throw new NotImplementedException($"instruction {parts[0]} not implemented.");
         }
     }
 }
