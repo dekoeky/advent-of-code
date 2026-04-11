@@ -68,16 +68,6 @@ public class Puzzle
     }
 
     [TestMethod]
-    public void Part2Examples(int input, int expected)
-    {
-        // Act
-        var result = Calculations.Part1(input);
-
-        // Assert
-        Assert.AreEqual(expected, result);
-    }
-
-    [TestMethod]
     public void Part2Puzzle()
     {
         // Arrange
@@ -87,6 +77,6 @@ public class Puzzle
         var result = Calculations.Part2(input);
 
         // Assert
-        Assert.AreEqual(258, result);
+        Assert.AreEqual(295229, result);
     }
 }

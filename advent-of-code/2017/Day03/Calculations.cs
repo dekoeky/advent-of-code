@@ -70,8 +70,88 @@ internal static class Calculations
         );
     }
 
+    private static readonly (int dx, int dy)[] Directions =
+     [
+        // In order of precedence
+
+        (1, 0),  // right (starting direction)
+        (0, 1),  // up
+        (-1, 0), // left
+        (0, -1)  // down
+    ];
+
+    private static readonly (int dx, int dy)[] Neighbors =
+     [
+        (-1,-1), (0,-1), (1,-1),
+        (-1, 0),         (1, 0),
+        (-1, 1), (0, 1), (1, 1)
+    ];
+
+
     public static int Part2(int input)
     {
-        throw new NotImplementedException();
+
+        // 147  142  133  122   59
+        // 304    5    4    2   57
+        // 330   10    1    1   54
+        // 351   11   23   25   26
+        // 362  747  806--->   ...
+
+        // Move right   1
+        // Move up      1
+        // Move left    2
+        // Move down    2
+        // Move right   3
+        // Move up      3
+        // Move left    4
+        // Move down    4
+        // ...
+
+        // So always 2 moves of an increasing step size, in a left spiraling direction
+
+
+        var grid = new Dictionary<(int, int), int>
+        {
+            [(0, 0)] = 1
+        };
+
+        int x = 0, y = 0;
+        int stepSize = 1;
+        int dirIndex = 0;
+
+        while (true)
+        {
+            // Repeat the current step size twice, before increasing
+            for (int repeat = 0; repeat < 2; repeat++)
+            {
+                // Lookup current movement direction
+                var (dx, dy) = Directions[dirIndex];
+
+                // Make steps up until the step size
+                for (int step = 0; step < stepSize; step++)
+                {
+                    x += dx;
+                    y += dy;
+
+                    // Calculate the sum of all neighbors
+                    var sum = 0;
+                    foreach (var (nx, ny) in Neighbors)
+                        if (grid.TryGetValue((x + nx, y + ny), out int v))
+                            sum += v;
+
+                    // We reached a solution, if the value is (the first value that is) larger than the input
+                    if (sum > input)
+                        return sum;
+
+                    // Store the value for later use
+                    grid[(x, y)] = sum;
+                }
+
+                // Turn left
+                dirIndex = (dirIndex + 1) % 4;
+            }
+
+            stepSize++;
+        }
     }
 }
