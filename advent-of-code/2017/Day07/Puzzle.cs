@@ -54,9 +54,10 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Puzzle;
+        var blocks = Calculations.Parse(input);
 
         // Act
-        var result = Calculations.Part2(input);
+        var result = Calculations.Part2(blocks);
 
         // Assert
         Assert.AreEqual(2392, result);
