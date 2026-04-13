@@ -1,7 +1,7 @@
 namespace advent_of_code._2017.Day09;
 
 /// <summary>
-/// Year 2017 Day 08 solution.
+/// Year 2017 Day 09 solution.
 /// </summary>
 /// <seealso href="https://adventofcode.com/2017/day/9"/>
 [TestClass]
