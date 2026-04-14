@@ -4,8 +4,11 @@ namespace advent_of_code._2017.Day10;
 
 internal static class Calculations
 {
-    public static int Part1(byte[] elements, string input)
+    private const int DefaultN = 256;
+
+    public static int Part1(string input, int n = DefaultN)
     {
+        byte[] elements = [.. Enumerable.Range(0, n).Select(i => (byte)i)];
         var lengths = ParsePart1(input);
 
         Knot(elements, lengths);
@@ -45,15 +48,21 @@ internal static class Calculations
         }
     }
 
-    public static string Part2(byte[] elements, string input)
+    public static string Part2(string input, int n = DefaultN)
     {
+        var denseHash = DenseHash(input, n);
+
+        return Convert.ToHexStringLower(denseHash);
+    }
+
+    public static byte[] DenseHash(string input, int n = DefaultN)
+    {
+        byte[] elements = [.. Enumerable.Range(0, n).Select(i => (byte)i)];
         var lengths = ParsePart2(input);
 
         Knot(elements, lengths, 64);
 
-        var denseHash = ToDenseHash(elements);
-
-        return Convert.ToHexStringLower(denseHash);
+        return ToDenseHash(elements);
     }
 
     private static byte[] ToDenseHash(byte[] sparseHash)

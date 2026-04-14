@@ -12,10 +12,10 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Example;
-        byte[] elements = [.. Enumerable.Range(0, 5).Select(i => (byte)i)];
+        var n = 5;
 
         // Act
-        var result = Calculations.Part1(elements, input);
+        var result = Calculations.Part1(input, n);
 
         // Assert
         Assert.AreEqual(12, result);
@@ -26,10 +26,10 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Puzzle;
-        byte[] elements = [.. Enumerable.Range(0, 256).Select(i => (byte)i)];
+        var n = 256;
 
         // Act
-        var result = Calculations.Part1(elements, input);
+        var result = Calculations.Part1(input, n);
 
         // Assert
         Assert.AreEqual(62238, result);
@@ -43,10 +43,10 @@ public class Puzzle
     public void Part2Examples(string input, string expectedHash)
     {
         // Arrange
-        byte[] elements = [.. Enumerable.Range(0, 256).Select(i => (byte)i)];
+        var n = 256;
 
         // Act
-        var result = Calculations.Part2(elements, input);
+        var result = Calculations.Part2(input, n);
 
         // Assert
         Assert.AreEqual(expectedHash, result);
@@ -57,10 +57,10 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Puzzle;
-        byte[] elements = [.. Enumerable.Range(0, 256).Select(i => (byte)i)];
+        var n = 256;
 
         // Act
-        var result = Calculations.Part2(elements, input);
+        var result = Calculations.Part2(input, n);
 
         // Assert
         Assert.AreEqual("2b0c9cc0449507a0db3babd57ad9e8d8", result);
