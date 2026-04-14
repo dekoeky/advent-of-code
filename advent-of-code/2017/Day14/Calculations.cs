@@ -4,7 +4,6 @@ namespace advent_of_code._2017.Day14;
 
 internal static class Calculations
 {
-    const bool USED = true;
     const int FREE_VALUE = 0;
     const int USED_VALUE = 1;
     const char FREE_SYMBOL = '.';
