@@ -4,8 +4,20 @@ public static class Array2DExtensions
 {
     extension(Array data)
     {
-        public TOut[,] CreateEqualSizeArray<TOut>() =>
-        new TOut[data.GetLength(0), data.GetLength(1)];
+        public TOut[,] CreateEqualSizeArray<TOut>()
+            => new TOut[data.GetLength(0), data.GetLength(1)];
+
+        public static void CopyRegion<T>(
+           T[,] src,
+           int srcRow, int srcCol,
+           T[,] dst,
+           int dstRow, int dstCol,
+           int height, int width)
+        {
+            for (var r = 0; r < height; r++)
+                for (var c = 0; c < width; c++)
+                    dst[dstRow + r, dstCol + c] = src[srcRow + r, srcCol + c];
+        }
     }
 
     extension<T>(T[,] array)
