@@ -12,10 +12,10 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Example;
-        var blocks = Calculations.Parse(input);
+        var nodes = Calculations.ParseNodes(input);
 
         // Act
-        var result = Calculations.TowerBottom(blocks);
+        var result = Calculations.FindRootName(nodes);
 
         // Assert
         Assert.AreEqual("tknk", result);
@@ -26,10 +26,10 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Puzzle;
-        var blocks = Calculations.Parse(input);
+        var nodes = Calculations.ParseNodes(input);
 
         // Act
-        var result = Calculations.TowerBottom(blocks);
+        var result = Calculations.FindRootName(nodes);
 
         // Assert
         Assert.AreEqual("hlhomy", result);
@@ -40,13 +40,13 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Example;
-        var blocks = Calculations.Parse(input);
+        var nodes = Calculations.ParseNodes(input);
 
         // Act
-        var result = Calculations.Part2(blocks);
+        var correctedWeight = Calculations.FindCorrectedWeight(nodes);
 
         // Assert
-        Assert.AreEqual(60, result);
+        Assert.AreEqual(60, correctedWeight);
     }
 
     [TestMethod]
@@ -54,12 +54,12 @@ public class Puzzle
     {
         // Arrange
         var input = Inputs.Puzzle;
-        var blocks = Calculations.Parse(input);
+        var nodes = Calculations.ParseNodes(input);
 
         // Act
-        var result = Calculations.Part2(blocks);
+        var correctedWeight = Calculations.FindCorrectedWeight(nodes);
 
         // Assert
-        Assert.AreEqual(2392, result);
+        Assert.AreEqual(1505, correctedWeight);
     }
 }
