@@ -1,10 +1,9 @@
-﻿using advent_of_code.Helpers;
+using advent_of_code.Helpers;
 
 namespace advent_of_code._2025.Day09;
 
 internal static class Calculations
 {
-
     public static long Perform(string input)
     {
         var lines = SplitOn.NewLines(input);

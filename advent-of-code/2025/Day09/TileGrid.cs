@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace advent_of_code._2025.Day09;
 
 public class TileGrid(char[][] tiles, RowCol[] redTiles)
@@ -44,10 +42,9 @@ public class TileGrid(char[][] tiles, RowCol[] redTiles)
                 var currentTile = this[rc];
                 if (currentTile == RedTile) continue;
 
-                if (rc == a || rc == b)
-                    this[rc] = RedTile;
-                else
-                    this[rc] = GreenTile;
+                this[rc] = rc == a || rc == b
+                    ? RedTile
+                    : GreenTile;
             }
         }
     }
@@ -135,15 +132,14 @@ public class TileGrid(char[][] tiles, RowCol[] redTiles)
     [Conditional("DEBUG")]
     public void PrintDebug(string? title = null)
     {
-        return;
-        if (title is not null) Console.WriteLine(title);
+        if (title is not null) Debug.WriteLine(title);
         foreach (var line in Tiles)
         {
             foreach (char c in line)
-                Console.Write(c);
-            Console.WriteLine();
+                Debug.Write(c);
+            Debug.WriteLine();
         }
-        Console.WriteLine();
-        Console.WriteLine();
+        Debug.WriteLine();
+        Debug.WriteLine();
     }
 }

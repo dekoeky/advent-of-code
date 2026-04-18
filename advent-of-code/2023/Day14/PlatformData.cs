@@ -1,5 +1,6 @@
-using advent_of_code.Helpers;
 using System.Text;
+
+using advent_of_code.Helpers;
 
 namespace advent_of_code._2023.Day14;
 
@@ -14,28 +15,28 @@ public class PlatformData(char[/* ROW */, /* COLUMN */] data) : IEquatable<Platf
     public static PlatformData Parse(string input)
     {
         var lines = SplitOn.NewLines(input);
-        var R = lines.Length;
-        var C = lines.FirstOrDefault()?.Length ?? 0;
+        var rows = lines.Length;
+        var cols = lines.FirstOrDefault()?.Length ?? 0;
 
-        var data = new char[R, C];
-        for (var r = 0; r < R; r++)
-            for (var c = 0; c < C; c++)
+        var data = new char[rows, cols];
+        for (var r = 0; r < rows; r++)
+            for (var c = 0; c < cols; c++)
                 data[r, c] = lines[r][c];
 
         return new PlatformData(data);
     }
-    public void Cycle(int N)
+    public void Cycle(int n)
     {
-        for (var i = 0; i < N; i++)
+        for (var i = 0; i < n; i++)
             Cycle();
     }
     public void Cycle()
     {
         throw new NotImplementedException("TOO SLOW!");
-        ShiftNorth();
-        ShiftWest();
-        ShiftSouth();
-        ShiftEast();
+        //ShiftNorth();
+        //ShiftWest();
+        //ShiftSouth();
+        //ShiftEast();
     }
 
     public void Shift(ShiftDirection direction)
@@ -215,5 +216,15 @@ public class PlatformData(char[/* ROW */, /* COLUMN */] data) : IEquatable<Platf
                 sb.AppendLine();
         }
         return sb.ToString();
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return Equals(obj as PlatformData);
+    }
+
+    public override int GetHashCode()
+    {
+        throw new NotImplementedException();
     }
 }

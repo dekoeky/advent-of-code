@@ -12,14 +12,14 @@ internal static class Calculations
         var map = input.To2DArray();
         var rows = map.GetLength(0);
         var cols = map.GetLength(1);
-        var offset = (Rows: rows / 2, Cols: cols / 2);
+        var (offsetR, offsetC) = (rows / 2, cols / 2);
 
         HashSet<(int Row, int Col)> infected = [];
 
         for (var r = 0; r < rows; r++)
             for (var c = 0; c < cols; c++)
                 if (map[r, c] == Infected)
-                    infected.Add((r - offset.Rows, c - offset.Cols));
+                    infected.Add((r - offsetR, c - offsetC));
 
         var direction = Direction.Up;
         var position = (Row: 0, Col: 0);
@@ -27,31 +27,29 @@ internal static class Calculations
 
         for (var b = 0; b < bursts; b++)
         {
-            // Step 1.
-            // If the current node is infected, it turns to its right.
             if (infected.Contains(position))
+            {
+                // Step 1.
                 direction = direction.RotateRight();
-            // Otherwise, it turns to its left. (Turning is done in-place; the current node does not change.)
+
+                // Step 2.
+                infected.Remove(position);
+            }
             else
+            {
+                // Step 1.
                 direction = direction.RotateLeft();
 
-            // Step 2.
-            // If the current node is clean, it becomes infected.
-            if (!infected.Contains(position))
-            {
+                // Step 2.
                 infected.Add(position);
                 infections++;
             }
-            // Otherwise, it becomes cleaned. (This is done after the node is considered for the purposes of changing direction.)
-            else
-            {
-                infected.Remove(position);
-            }
+
 
             // Step 3.
             // The virus carrier moves forward one node in the direction it is facing.
-            var step = direction.GetStep();
-            position = (position.Row + step.Rows, position.Col + step.Cols);
+            var (stepR, stepC) = direction.GetStep();
+            position = (position.Row + stepR, position.Col + stepC);
         }
 
         return infections;
@@ -63,14 +61,14 @@ internal static class Calculations
         var map = input.To2DArray();
         var rows = map.GetLength(0);
         var cols = map.GetLength(1);
-        var offset = (Rows: rows / 2, Cols: cols / 2);
+        var (offsetR, offsetC) = (rows / 2, cols / 2);
 
         Dictionary<(int Row, int Col), State> states = [];
 
         for (var r = 0; r < rows; r++)
             for (var c = 0; c < cols; c++)
                 if (map[r, c] == Infected)
-                    states.Add((r - offset.Rows, c - offset.Cols), State.Infected);
+                    states.Add((r - offsetR, c - offsetC), State.Infected);
 
         var direction = Direction.Up;
         var pos = (Row: 0, Col: 0);
@@ -109,8 +107,8 @@ internal static class Calculations
 
             // Step 3.
             // The virus carrier moves forward one node in the direction it is facing.
-            var step = direction.GetStep();
-            pos = (pos.Row + step.Rows, pos.Col + step.Cols);
+            var (stepR, stepC) = direction.GetStep();
+            pos = (pos.Row + stepR, pos.Col + stepC);
         }
 
         return infections;

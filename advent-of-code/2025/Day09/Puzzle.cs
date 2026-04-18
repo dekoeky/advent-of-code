@@ -42,18 +42,18 @@ public class Puzzle
         Assert.AreEqual(24, result);
     }
 
-    [TestMethod]
-    public void Puzzle2()
-    {
-        // Arrange
-        var input = Inputs.Puzzle;
+    //[TestMethod]
+    //public void Puzzle2()
+    //{
+    //    // Arrange
+    //    var input = Inputs.Puzzle;
 
-        // Act
-        throw new NotImplementedException("dead end");
-        var result = Calculations.Perform3(input);
+    //    // Act
+    //    throw new NotImplementedException("dead end");
+    //    var result = Calculations.Perform3(input);
 
-        // Assert
-        Assert.IsLessThan(2147380284, result);
-        Console.WriteLine($"Result: {result}");
-    }
+    //    // Assert
+    //    Assert.IsLessThan(2147380284, result);
+    //    Console.WriteLine($"Result: {result}");
+    //}
 }

@@ -12,14 +12,19 @@ public class AdventOfCodeClientTests
         .AddUserSecrets<AdventOfCodeClientTests>()
         .Build();
 
-    private readonly AdventOfCodeClient _client = new(Config["Aoc:session"]);
+    internal static AdventOfCodeClient GetClient()
+        => new(Config["Aoc:session"]
+            ?? throw new ArgumentNullException("Aoc:session"));
 
     [TestMethod]
     [DataRow(2015, 18)]
     public async Task PuzzleInput(int year, int day)
     {
+        // Arrange
+        var client = GetClient();
+
         // Act
-        var puzzleInput = await _client.PuzzleInput(year, day);
+        var puzzleInput = await client.PuzzleInput(year, day);
 
         // Assert
         Assert.IsNotEmpty(puzzleInput);

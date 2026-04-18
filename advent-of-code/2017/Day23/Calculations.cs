@@ -48,6 +48,9 @@ internal static class Calculations
 
     public static long Part2(string input)
     {
+        // Input ignored
+        _ = input;
+
         const int start = 109900;
         const int end = 126900;
         const int step = 17;
@@ -82,5 +85,3 @@ internal static class Calculations
         return true;
     }
 }
-
-

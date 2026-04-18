@@ -4,11 +4,11 @@ namespace advent_of_code._2016.Day04;
 
 internal partial class RoomDefinition
 {
-    public string Raw { get; private set; }
-    public int SectorId { get; private set; }
-    public string EncryptedName { get; private set; }
-    public string UnEncryptedName { get; private set; }
-    public string CheckSum { get; private set; }
+    public required string Raw { get; init; }
+    public int SectorId { get; private init; }
+    public required string EncryptedName { get; init; }
+    public required string UnEncryptedName { get; init; }
+    public required string CheckSum { get; init; }
 
     [GeneratedRegex("^([a-z-]+)-(\\d+)\\[([a-z]{5})\\]$")]
     private static partial Regex GetRegex();
