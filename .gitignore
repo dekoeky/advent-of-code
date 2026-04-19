@@ -406,3 +406,6 @@ desktop.ini
 
 # star-tracking data
 star-tracking/data/
+
+# JetBrains Rider
+.idea
