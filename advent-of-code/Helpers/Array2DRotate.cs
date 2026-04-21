@@ -93,5 +93,69 @@ internal static class Array2DRotate
 
             return dst;
         }
+
+        public T[][,] Variants(bool includeOriginal)
+        {
+            var variants = new T[includeOriginal ? 8 : 7][,];
+            var i = 0;
+
+            // Original
+            // A B C
+            // D E F
+            // G H I
+            if (includeOriginal)
+                variants[i++] = array;
+
+            // Rotated  90° Right
+            // G D A
+            // H E B
+            // I F C
+            var r90 = array.Rotated90();
+            variants[i++] = r90;
+
+            // Rotated 180° Right
+            // I H G
+            // F E D
+            // C B A
+            var r180 = r90.Rotated90();
+            variants[i++] = r180;
+
+            // Rotated 270° Right (Or 90° Left)
+            // C F I
+            // B E H
+            // A D G
+            var r270 = r180.Rotated90();
+            variants[i++] = r270;
+
+            // Flipped Horizontally
+            // C B A
+            // F E D
+            // I H G
+            var f = array.FlippedHorizontal();
+            variants[i++] = f;
+
+            // Flipped Horizontally + Rotated 90° Right
+            // I F C
+            // H E B
+            // G D A
+            var f90 = f.Rotated90();
+            variants[i++] = f90;
+
+            // Flipped Horizontally + Rotated 180° Right (Or Original Flipped Vertically)
+            // G H I
+            // D E F
+            // A B C
+            var f180 = f90.Rotated90();
+            variants[i++] = f180;
+
+            // Flipped Horizontally + Rotated 270° Right
+            // A D G
+            // B E H
+            // C F I
+            var f270 = f180.Rotated90();
+            variants[i++] = f270;
+
+            return variants;
+        }
     }
 }

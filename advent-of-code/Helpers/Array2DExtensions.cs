@@ -32,5 +32,18 @@ public static class Array2DExtensions
 
             return count;
         }
+
+        public TOut[,] Convert<TOut>(Func<T, TOut> Convert)
+        {
+            var rows = array.GetLength(0);
+            var cols = array.GetLength(1);
+            var converted = new TOut[rows, cols];
+
+            for (var r = 0; r < rows; r++)
+                for (var c = 0; c < cols; c++)
+                    converted[r, c] = Convert(array[r, c]);
+
+            return converted;
+        }
     }
 }
