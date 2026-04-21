@@ -46,6 +46,6 @@ public class Puzzle
         var result = Calculations.Execute(input, n);
 
         // Assert
-        Assert.AreEqual(16642, result);
+        Assert.AreEqual(2335049, result);
     }
 }
