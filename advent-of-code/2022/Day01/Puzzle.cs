@@ -34,7 +34,7 @@ public class Puzzle
     }
 
     [TestMethod]
-    public void Part2Examples()
+    public void Part2Example()
     {
         // Arrange
         var input = Inputs.Example;
