@@ -1,13 +1,20 @@
-﻿namespace advent_of_code.Helpers;
+namespace advent_of_code.Helpers;
 
 public static class StringToCharArray
 {
-    public static char[,] To2DArray(this string input) => To2DArray((ReadOnlySpan<char>)input);
+    public static char[,] To2DArray(this string input)
+        => To2DArray(input, c => c);
     public static char[,] To2DArray(this ReadOnlySpan<char> input)
+        => To2DArray(input, c => c);
+
+    public static T[,] To2DArray<T>(this string input, Func<char, T> selector)
+        => To2DArray((ReadOnlySpan<char>)input, selector);
+
+    public static T[,] To2DArray<T>(this ReadOnlySpan<char> input, Func<char, T> selector)
     {
         GetSize(input, out var rows, out var cols);
 
-        var data = new char[rows, cols];
+        var data = new T[rows, cols];
         var i = 0;
         for (var r = 0; r < rows; r++)
             for (var c = 0; c < cols; c++)
@@ -15,7 +22,7 @@ public static class StringToCharArray
                 while (input[i] is '\r' or '\n')
                     i++;
 
-                data[r, c] = input[i++];
+                data[r, c] = selector(input[i++]);
             }
 
         return data;
