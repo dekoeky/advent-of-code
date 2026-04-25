@@ -43,7 +43,7 @@ public class Puzzle
         var result = Calculations.Part2(input);
 
         // Assert
-        Assert.AreEqual(15, result);
+        Assert.AreEqual(66, result);
     }
 
     [TestMethod]
@@ -56,6 +56,6 @@ public class Puzzle
         var result = Calculations.Part2(input);
 
         // Assert
-        Assert.AreEqual(959, result);
+        Assert.AreEqual(13935, result);
     }
 }
