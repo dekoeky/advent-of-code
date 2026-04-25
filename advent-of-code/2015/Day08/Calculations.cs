@@ -1,4 +1,3 @@
-﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace advent_of_code._2015.Day08;

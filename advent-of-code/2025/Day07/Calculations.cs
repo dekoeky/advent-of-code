@@ -1,5 +1,4 @@
-﻿using advent_of_code.Helpers;
-using System.Diagnostics;
+using advent_of_code.Helpers;
 
 namespace advent_of_code._2025.Day07;
 
@@ -43,7 +42,7 @@ public static class Calculations
                 if (beamColumn < columns - 1) newBeams.Add(beamColumn + 1);
             }
 
-            beamColumns = newBeams.ToList();
+            beamColumns = [.. newBeams];
 
 
             // Draw the beams
