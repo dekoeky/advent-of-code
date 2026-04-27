@@ -1,0 +1,19 @@
+name: Daily AoC Token Check
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Token
+        env:
+          AOC_SESSION: ${{ secrets.AOC_SESSION }}
+        run: ./star-tracking/scripts/check-token.sh
