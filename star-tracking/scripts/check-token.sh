@@ -9,9 +9,7 @@ if [[ -z "$AOC_SESSION" ]]; then
     exit 1
 fi
 
-STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-  -H "Cookie: session=$AOC_SESSION" \
-  "$URL")
+STATUS=$(curl -s -o /dev/null -w "%{http_code}" --cookie "session=${AOC_SESSION}" "$URL")
 
 if [ "$STATUS" -eq 200 ]; then
     echo "OK"
