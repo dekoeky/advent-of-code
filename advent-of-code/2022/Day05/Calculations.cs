@@ -21,7 +21,7 @@ internal static class Calculations
                 var crate = fromStack.Last();
 
                 // Remove from FROM stack
-                fromStack.RemoveLast(1);
+                fromStack.RemoveLast();
 
                 // Add to TO stack
                 toStack.Add(crate);
