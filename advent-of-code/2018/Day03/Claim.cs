@@ -1,5 +1,3 @@
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2018.Day03;
 
 internal record struct Claim(int Id, ClaimPosition Position, ClaimSize Size)

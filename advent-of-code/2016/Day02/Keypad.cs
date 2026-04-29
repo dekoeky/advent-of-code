@@ -1,7 +1,5 @@
 using System.Text;
 
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2016.Day02;
 
 internal static class Keypad

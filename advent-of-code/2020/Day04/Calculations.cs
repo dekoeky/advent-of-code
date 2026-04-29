@@ -1,7 +1,5 @@
 using System.Text.RegularExpressions;
 
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2020.Day04;
 
 internal static partial class Calculations

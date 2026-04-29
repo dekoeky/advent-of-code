@@ -1,5 +1,3 @@
-﻿using advent_of_code.Helpers;
-
 namespace advent_of_code._2025.Day06;
 
 public static class Calculations

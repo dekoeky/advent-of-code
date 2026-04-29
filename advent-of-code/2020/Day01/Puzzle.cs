@@ -1,5 +1,3 @@
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2020.Day01;
 
 /// <summary>

@@ -2,7 +2,7 @@ namespace advent_of_code._2016.Day06;
 
 public static class Inputs
 {
-    public const string Example = 
+    public const string Example =
         """
         eedadn
         drvtee
@@ -22,7 +22,7 @@ public static class Inputs
         enarar
         """;
 
-    public const string Puzzle = 
+    public const string Puzzle =
         """
         blrqqadw
         hxwteava

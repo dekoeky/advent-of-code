@@ -1,5 +1,3 @@
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2018.Day04;
 
 internal abstract partial record Event(DateTime TimeStamp)

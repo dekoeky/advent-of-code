@@ -1,5 +1,3 @@
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2022.Day05;
 
 internal readonly record struct Move(int Count, int From, int To)

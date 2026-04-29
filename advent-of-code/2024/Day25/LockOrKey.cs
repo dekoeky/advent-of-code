@@ -1,5 +1,3 @@
-﻿using advent_of_code.Helpers;
-
 namespace advent_of_code._2024.Day25;
 
 internal abstract class LockOrKey(int[] values)

@@ -1,5 +1,3 @@
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2017.Day21;
 
 internal record EnhancementRule(string Key, char[,] Pattern, char[,] ReplacePattern, int Size)

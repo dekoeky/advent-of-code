@@ -1,7 +1,5 @@
 using System.Text;
 
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2022.Day05;
 
 internal static class Calculations

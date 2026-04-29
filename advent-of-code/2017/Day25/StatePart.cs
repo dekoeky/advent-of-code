@@ -1,5 +1,3 @@
-using advent_of_code.Helpers;
-
 namespace advent_of_code._2017.Day25;
 
 internal record StatePart(char State, Dictionary<int, ValuePart> Parts)
