@@ -138,7 +138,7 @@ internal static class Calculations
 
         if (o > 0)
         {
-            var autoCompleteScore = 0l;
+            var autoCompleteScore = 0L;
 
             while (o > 0)
             {

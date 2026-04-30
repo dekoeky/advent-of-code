@@ -20,7 +20,7 @@ internal static partial class Calculations
 
     private static Dictionary<string, string> Parse(string passport)
     {
-        var parts = passport.Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
+        var parts = passport.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries);
         return parts
             .Select(p => p.Split(':'))
             .ToDictionary(p => p[0], p => p[1]);
@@ -43,15 +43,9 @@ internal static partial class Calculations
         ["byr"] = s => int.TryParse(s, out var byr) && byr >= 1920 && byr <= 2002,
         ["iyr"] = s => int.TryParse(s, out var iyr) && iyr >= 2010 && iyr <= 2020,
         ["eyr"] = s => int.TryParse(s, out var eyr) && eyr >= 2020 && eyr <= 2030,
-        ["hgt"] = s =>
-        {
-            if (!int.TryParse(s[..^2], out var hgt)) return false;
-
-            if (s.EndsWith("cm")) return hgt >= 150 && hgt <= 193;
-            if (s.EndsWith("in")) return hgt >= 59 && hgt <= 76;
-
-            return false;
-        },
+        ["hgt"] = s => int.TryParse(s[..^2], out var hgt)
+                       && (s.EndsWith("cm") && hgt is >= 150 and <= 193)
+                       || (s.EndsWith("in") && hgt is >= 59 and <= 76),
         ["hcl"] = s => HclRegex.IsMatch(s),
         ["ecl"] = s => ValidEyeColors.Contains(s),
         ["pid"] = s => int.TryParse(s, out _) && s.Trim().Length == 9,
