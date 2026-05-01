@@ -1,4 +1,4 @@
-namespace advent_of_code._Templates.DayXX;
+namespace AdventOfCode._Templates.DayXX;
 
 public static class Inputs
 {

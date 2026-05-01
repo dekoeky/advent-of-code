@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace advent_of_code._2016.Day13;
+namespace AdventOfCode._2016.Day13;
 
 internal static class Calculations
 {

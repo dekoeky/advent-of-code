@@ -1,4 +1,4 @@
-namespace advent_of_code._2015.Day10;
+namespace AdventOfCode._2015.Day10;
 
 [TestClass]
 public class Puzzle

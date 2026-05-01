@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day07;
+namespace AdventOfCode._2015.Day07;
 
 public class Instruction
 {

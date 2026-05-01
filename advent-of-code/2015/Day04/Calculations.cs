@@ -1,7 +1,7 @@
-﻿using System.Security.Cryptography;
+using System.Security.Cryptography;
 using System.Text;
 
-namespace advent_of_code._2015.Day04;
+namespace AdventOfCode._2015.Day04;
 
 internal static class Calculations
 {

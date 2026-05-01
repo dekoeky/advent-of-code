@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day16;
+namespace AdventOfCode._2017.Day16;
 
 /// <summary>
 /// Year 2017 Day 16 solution.

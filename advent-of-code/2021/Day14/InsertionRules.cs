@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace advent_of_code._2021.Day14;
+namespace AdventOfCode._2021.Day14;
 
 internal class InsertionRules
 {

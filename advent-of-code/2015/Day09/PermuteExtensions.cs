@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day09;
+namespace AdventOfCode._2015.Day09;
 
 public static class PermuteExtensions
 {

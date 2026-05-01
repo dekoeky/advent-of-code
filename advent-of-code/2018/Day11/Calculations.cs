@@ -1,4 +1,4 @@
-namespace advent_of_code._2018.Day11;
+namespace AdventOfCode._2018.Day11;
 
 internal static class Calculations
 {

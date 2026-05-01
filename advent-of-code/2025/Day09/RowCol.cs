@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2025.Day09;
+namespace AdventOfCode._2025.Day09;
 
 public readonly record struct RowCol(int Row, int Col)
 {

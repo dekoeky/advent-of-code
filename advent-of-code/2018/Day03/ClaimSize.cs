@@ -1,4 +1,4 @@
-namespace advent_of_code._2018.Day03;
+namespace AdventOfCode._2018.Day03;
 
 internal record struct ClaimSize(int Width, int Height)
 {

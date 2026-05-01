@@ -1,6 +1,6 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
-namespace advent_of_code._2015.Day12;
+namespace AdventOfCode._2015.Day12;
 
 internal static class Calculations
 {

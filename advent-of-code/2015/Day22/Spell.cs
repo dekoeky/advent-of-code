@@ -1,4 +1,4 @@
-namespace advent_of_code._2015.Day22;
+namespace AdventOfCode._2015.Day22;
 
 public record Spell(string Name, int Cost, int InstantDamage, int InstantHeal, Effect? Effect)
 {

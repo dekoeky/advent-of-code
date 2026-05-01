@@ -1,7 +1,7 @@
 // Convention 2D Array: array[row, col] = array[y, x]
 using RowCol = (int Row, int Col);
 
-namespace advent_of_code._2016.Day24;
+namespace AdventOfCode._2016.Day24;
 
 internal static class Calculations
 {

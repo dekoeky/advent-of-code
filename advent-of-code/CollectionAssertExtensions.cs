@@ -1,4 +1,4 @@
-namespace advent_of_code;
+namespace AdventOfCode;
 
 /// <summary>
 /// <see cref="CollectionAssert"/> extensions.

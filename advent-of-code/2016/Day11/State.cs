@@ -1,4 +1,4 @@
-namespace advent_of_code._2016.Day11;
+namespace AdventOfCode._2016.Day11;
 
 internal record State(int Elevator, int[] Generators, int[] Chips)
 {

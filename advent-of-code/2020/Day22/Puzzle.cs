@@ -1,4 +1,4 @@
-namespace advent_of_code._2020.Day22;
+namespace AdventOfCode._2020.Day22;
 
 /// <summary>
 /// Year 2020 Day 22 solution.

@@ -1,4 +1,4 @@
-namespace advent_of_code._2021.Day04;
+namespace AdventOfCode._2021.Day04;
 
 /// <summary>
 /// Year 2021 Day 04 solution.

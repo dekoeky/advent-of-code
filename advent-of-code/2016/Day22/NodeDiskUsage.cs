@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace advent_of_code._2016.Day22;
+namespace AdventOfCode._2016.Day22;
 
 internal partial record NodeDiskUsage(string Name, int X, int Y, int Size, int Used, int Avail, int Use)
 {

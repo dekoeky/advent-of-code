@@ -1,4 +1,4 @@
-namespace advent_of_code.Helpers;
+namespace AdventOfCode.Helpers;
 
 internal static class CombinationExtensions
 {

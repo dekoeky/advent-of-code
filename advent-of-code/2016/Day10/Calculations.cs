@@ -1,6 +1,6 @@
-using advent_of_code._2016.Day10.Models;
+using AdventOfCode._2016.Day10.Models;
 
-namespace advent_of_code._2016.Day10;
+namespace AdventOfCode._2016.Day10;
 
 internal static class Calculations
 {

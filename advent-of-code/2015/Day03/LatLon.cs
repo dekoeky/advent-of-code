@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day03;
+namespace AdventOfCode._2015.Day03;
 
 internal record struct LatLon(int Lat, int Lon)
 {

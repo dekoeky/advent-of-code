@@ -1,4 +1,4 @@
-namespace advent_of_code._2016.Day02;
+namespace AdventOfCode._2016.Day02;
 
 /// <summary>
 /// Year 2016 Day 02 solution.

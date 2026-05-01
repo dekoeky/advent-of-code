@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace advent_of_code.Helpers;
+namespace AdventOfCode.Helpers;
 
 /// <summary>
 /// Parses comma-separated numbers from strings.

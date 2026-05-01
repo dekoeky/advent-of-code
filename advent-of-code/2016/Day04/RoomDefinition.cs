@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace advent_of_code._2016.Day04;
+namespace AdventOfCode._2016.Day04;
 
 internal partial class RoomDefinition
 {

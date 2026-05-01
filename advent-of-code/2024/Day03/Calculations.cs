@@ -1,6 +1,6 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 
-namespace advent_of_code._2024.Day03;
+namespace AdventOfCode._2024.Day03;
 
 internal static class Calculations
 {

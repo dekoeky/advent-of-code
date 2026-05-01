@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+using System.Drawing;
 
-namespace advent_of_code._2024.Day04;
+namespace AdventOfCode._2024.Day04;
 
 internal static class Calculations
 {

@@ -1,4 +1,4 @@
-namespace advent_of_code._2019.Day04;
+namespace AdventOfCode._2019.Day04;
 
 /// <summary>
 /// Year 2019 Day 04 solution.

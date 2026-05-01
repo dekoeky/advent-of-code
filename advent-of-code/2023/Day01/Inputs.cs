@@ -1,4 +1,4 @@
-namespace advent_of_code._2023.Day01;
+namespace AdventOfCode._2023.Day01;
 
 public static class Inputs
 {

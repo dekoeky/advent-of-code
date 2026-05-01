@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace advent_of_code._2022.Day02;
+namespace AdventOfCode._2022.Day02;
 
 internal static class Calculations
 {

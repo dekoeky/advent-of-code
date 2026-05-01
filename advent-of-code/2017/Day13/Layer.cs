@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day13;
+namespace AdventOfCode._2017.Day13;
 
 internal record struct Layer(int Depth, int Range)
 {

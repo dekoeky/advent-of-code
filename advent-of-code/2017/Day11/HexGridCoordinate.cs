@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day11;
+namespace AdventOfCode._2017.Day11;
 
 internal record struct HexGridCoordinate(int X, int Y, int Z)
 {

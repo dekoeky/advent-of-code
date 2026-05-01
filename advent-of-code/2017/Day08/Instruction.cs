@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day08;
+namespace AdventOfCode._2017.Day08;
 
 record Instruction(string Register, string Manipulation, int Delta, string IfRegister, string IfCheck, int IfValue)
 {

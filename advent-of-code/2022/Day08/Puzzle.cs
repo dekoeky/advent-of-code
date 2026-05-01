@@ -1,4 +1,4 @@
-namespace advent_of_code._2022.Day08;
+namespace AdventOfCode._2022.Day08;
 
 /// <summary>
 /// Year 2022 Day 08 solution.

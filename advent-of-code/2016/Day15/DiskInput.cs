@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace advent_of_code._2016.Day15;
+namespace AdventOfCode._2016.Day15;
 
 internal partial record DiskInput(int Positions, int PositionAtT0)
 {

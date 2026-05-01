@@ -1,4 +1,4 @@
-namespace advent_of_code._2022.Day04;
+namespace AdventOfCode._2022.Day04;
 
 internal readonly record struct RangePair(Range A, Range B)
 {

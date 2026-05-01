@@ -1,4 +1,4 @@
-namespace advent_of_code._2015.Day01;
+namespace AdventOfCode._2015.Day01;
 
 /// <summary>
 /// Solves puzzle <see href="https://adventofcode.com/2015/day/1"/>

@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day25;
+namespace AdventOfCode._2017.Day25;
 
 /// <summary>
 /// Year 2017 Day 25 solution.

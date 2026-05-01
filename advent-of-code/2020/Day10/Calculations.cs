@@ -1,4 +1,4 @@
-namespace advent_of_code._2020.Day10;
+namespace AdventOfCode._2020.Day10;
 
 internal static partial class Calculations
 {

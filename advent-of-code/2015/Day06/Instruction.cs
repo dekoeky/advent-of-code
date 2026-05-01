@@ -1,6 +1,6 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 
-namespace advent_of_code._2015.Day06;
+namespace AdventOfCode._2015.Day06;
 
 internal partial class Instruction
 {

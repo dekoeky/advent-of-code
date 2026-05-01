@@ -1,4 +1,4 @@
-namespace advent_of_code._2020.Day02;
+namespace AdventOfCode._2020.Day02;
 
 internal readonly record struct PasswordPolicy(int A, int B, char Character)
 {

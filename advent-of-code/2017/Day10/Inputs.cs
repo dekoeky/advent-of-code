@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day10;
+namespace AdventOfCode._2017.Day10;
 
 internal static class Inputs
 {

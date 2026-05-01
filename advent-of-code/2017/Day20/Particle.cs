@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace advent_of_code._2017.Day20;
+namespace AdventOfCode._2017.Day20;
 
 internal partial record struct Particle(XYZ P, XYZ V, XYZ A)
 {

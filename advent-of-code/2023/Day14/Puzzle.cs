@@ -1,4 +1,4 @@
-namespace advent_of_code._2023.Day14.puzzle1;
+namespace AdventOfCode._2023.Day14.puzzle1;
 
 /// <seealso href="https://adventofcode.com/2023/day/14"/>
 [TestClass]

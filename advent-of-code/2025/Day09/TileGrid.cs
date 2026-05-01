@@ -1,4 +1,4 @@
-namespace advent_of_code._2025.Day09;
+namespace AdventOfCode._2025.Day09;
 
 public class TileGrid(char[][] tiles, RowCol[] redTiles)
 {

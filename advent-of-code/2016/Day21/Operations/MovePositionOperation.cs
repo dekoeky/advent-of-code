@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
-namespace advent_of_code._2016.Day21.Operations;
+namespace AdventOfCode._2016.Day21.Operations;
 
 internal sealed partial record MovePositionOperation(int From, int To) : Operation
 {

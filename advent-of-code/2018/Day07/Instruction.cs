@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace advent_of_code._2018.Day07;
+namespace AdventOfCode._2018.Day07;
 
 internal partial record Instruction(char Before, char After)
 {

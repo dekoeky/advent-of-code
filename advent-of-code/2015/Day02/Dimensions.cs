@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2015.Day02;
+namespace AdventOfCode._2015.Day02;
 
 internal readonly record struct Dimensions(int L, int W, int H)
 {

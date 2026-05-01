@@ -1,4 +1,4 @@
-namespace advent_of_code._2021.Day08;
+namespace AdventOfCode._2021.Day08;
 
 /// <summary>
 /// Year 2021 Day 08 solution.

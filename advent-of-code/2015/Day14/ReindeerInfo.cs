@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace advent_of_code._2015.Day14;
+namespace AdventOfCode._2015.Day14;
 
 internal partial record ReindeerInfo(string Name, int Speed, int FlyTime, int RestTime)
 {

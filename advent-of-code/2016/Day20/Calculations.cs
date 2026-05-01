@@ -1,7 +1,7 @@
 using IP = System.UInt32;
 
 
-namespace advent_of_code._2016.Day20;
+namespace AdventOfCode._2016.Day20;
 
 internal static class Calculations
 {

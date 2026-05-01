@@ -1,4 +1,4 @@
-namespace advent_of_code._2016.Day23;
+namespace AdventOfCode._2016.Day23;
 
 public static class Inputs
 {

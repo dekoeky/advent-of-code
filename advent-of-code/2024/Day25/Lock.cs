@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day25;
+namespace AdventOfCode._2024.Day25;
 
 internal class Lock(int[] values) : LockOrKey(values)
 {

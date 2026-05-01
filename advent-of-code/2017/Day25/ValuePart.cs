@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day25;
+namespace AdventOfCode._2017.Day25;
 
 internal record ValuePart(int CurrentValue, int WriteValue, bool Left, char ContinueState)
 {

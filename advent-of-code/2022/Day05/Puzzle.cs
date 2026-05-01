@@ -1,4 +1,4 @@
-namespace advent_of_code._2022.Day05;
+namespace AdventOfCode._2022.Day05;
 
 /// <summary>
 /// Year 2022 Day 05 solution.

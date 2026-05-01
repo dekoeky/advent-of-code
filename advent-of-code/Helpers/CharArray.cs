@@ -1,6 +1,6 @@
-﻿using System.Text;
+using System.Text;
 
-namespace advent_of_code.Helpers;
+namespace AdventOfCode.Helpers;
 
 public static class CharArray
 {

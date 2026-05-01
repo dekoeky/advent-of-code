@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace advent_of_code._2023.Day14;
+namespace AdventOfCode._2023.Day14;
 
 public class PlatformData(char[/* ROW */, /* COLUMN */] data) : IEquatable<PlatformData>
 {

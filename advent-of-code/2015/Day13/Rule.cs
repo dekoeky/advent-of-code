@@ -1,6 +1,6 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 
-namespace advent_of_code._2015.Day13;
+namespace AdventOfCode._2015.Day13;
 
 partial record Rule(string Name, int HappinessGain, string Neighbor)
 {

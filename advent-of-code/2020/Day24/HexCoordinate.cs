@@ -1,4 +1,4 @@
-namespace advent_of_code._2020.Day24;
+namespace AdventOfCode._2020.Day24;
 
 internal readonly record struct HexCoordinate(int X, int Y, int Z)
 {

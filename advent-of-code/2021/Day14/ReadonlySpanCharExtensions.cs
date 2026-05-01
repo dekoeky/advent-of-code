@@ -1,4 +1,4 @@
-namespace advent_of_code._2021.Day14;
+namespace AdventOfCode._2021.Day14;
 
 public static class ReadonlySpanCharExtensions
 {

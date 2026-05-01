@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2025.Day04;
+namespace AdventOfCode._2025.Day04;
 
 public static class CharArrayExtensions
 {

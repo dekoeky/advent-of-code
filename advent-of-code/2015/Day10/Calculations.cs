@@ -1,6 +1,6 @@
-﻿using System.Text;
+using System.Text;
 
-namespace advent_of_code._2015.Day10;
+namespace AdventOfCode._2015.Day10;
 
 internal static class Calculations
 {

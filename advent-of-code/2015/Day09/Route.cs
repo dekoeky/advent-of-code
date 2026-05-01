@@ -1,6 +1,6 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 
-namespace advent_of_code._2015.Day09;
+namespace AdventOfCode._2015.Day09;
 
 public partial record Route(string From, string To, int Distance)
 {

@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day02;
+namespace AdventOfCode._2024.Day02;
 
 internal static class Input
 {

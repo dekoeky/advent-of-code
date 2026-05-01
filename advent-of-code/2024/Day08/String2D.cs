@@ -1,6 +1,6 @@
-﻿using System.Text;
+using System.Text;
 
-namespace advent_of_code._2024.Day08;
+namespace AdventOfCode._2024.Day08;
 
 public static class String2D
 {

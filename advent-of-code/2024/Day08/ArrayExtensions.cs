@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day08;
+namespace AdventOfCode._2024.Day08;
 
 internal static class ArrayExtensions
 {

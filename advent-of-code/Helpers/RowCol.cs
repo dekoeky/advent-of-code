@@ -1,6 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 
-namespace advent_of_code.Helpers;
+namespace AdventOfCode.Helpers;
 
 [method: SetsRequiredMembers]
 public readonly record struct RowCol(int Row, int Col)

@@ -1,6 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 
-namespace advent_of_code._2025.Day05;
+namespace AdventOfCode._2025.Day05;
 
 internal readonly struct IngredientIdRange(long start, long end) : IEnumerable<long>
 {

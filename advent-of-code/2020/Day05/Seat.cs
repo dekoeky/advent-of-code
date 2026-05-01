@@ -1,4 +1,4 @@
-namespace advent_of_code._2020.Day05;
+namespace AdventOfCode._2020.Day05;
 
 internal readonly record struct Seat(int Row, int Column)
 {

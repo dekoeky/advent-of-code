@@ -1,8 +1,8 @@
-﻿using JunctionBoxDistance = (double Distance,
-    advent_of_code._2025.Day08.JunctionBox a,
-    advent_of_code._2025.Day08.JunctionBox b);
+using JunctionBoxDistance = (double Distance,
+    AdventOfCode._2025.Day08.JunctionBox a,
+    AdventOfCode._2025.Day08.JunctionBox b);
 
-namespace advent_of_code._2025.Day08;
+namespace AdventOfCode._2025.Day08;
 
 internal class JunctionBoxDistanceComparer : IComparer<JunctionBoxDistance>
 {

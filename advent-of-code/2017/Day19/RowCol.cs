@@ -1,4 +1,4 @@
-namespace advent_of_code._2017.Day19;
+namespace AdventOfCode._2017.Day19;
 
 internal record struct RowCol(int Row, int Col)
 {

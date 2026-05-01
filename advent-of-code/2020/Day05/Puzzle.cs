@@ -1,4 +1,4 @@
-namespace advent_of_code._2020.Day05;
+namespace AdventOfCode._2020.Day05;
 
 /// <summary>
 /// Year 2020 Day 05 solution.

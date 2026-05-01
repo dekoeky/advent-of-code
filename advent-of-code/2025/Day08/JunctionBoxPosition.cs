@@ -1,4 +1,4 @@
-namespace advent_of_code._2025.Day08;
+namespace AdventOfCode._2025.Day08;
 
 public record struct JunctionBoxPosition(int X, int Y, int Z)
 {

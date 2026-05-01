@@ -1,4 +1,4 @@
-namespace advent_of_code._2016.Day03;
+namespace AdventOfCode._2016.Day03;
 
 internal record struct TriangleDefinition(int A, int B, int C)
 {

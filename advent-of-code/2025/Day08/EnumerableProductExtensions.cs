@@ -1,6 +1,6 @@
-﻿using System.Numerics;
+using System.Numerics;
 
-namespace advent_of_code._2025.Day08;
+namespace AdventOfCode._2025.Day08;
 
 public static class EnumerableProductExtensions
 {

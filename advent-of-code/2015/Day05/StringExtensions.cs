@@ -1,4 +1,4 @@
-namespace advent_of_code._2015.Day05;
+namespace AdventOfCode._2015.Day05;
 
 internal static class StringExtensions
 {
