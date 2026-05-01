@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "ProgressScraper": {
+      "commandName": "Project"
+    },
+    "SessionKeyFromENV": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SESSION": "BLABLA"
+      }
+    },
+    "--help":    { "commandName": "Project", "commandLineArgs": "--help" },
+    "--version": { "commandName": "Project", "commandLineArgs": "--version" },
+    "download-year 2019": { "commandName": "Project", "commandLineArgs": "download-year 2019" },
+  }
+}

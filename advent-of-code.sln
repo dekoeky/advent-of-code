@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11626.88 stable
+VisualStudioVersion = 18.4.11626.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "advent-of-code", "advent-of-code\advent-of-code.csproj", "{2853027E-E925-4697-B644-232A74E5EC3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressScraper", "ProgressScraper\ProgressScraper.csproj", "{3EF47942-1123-47B3-B4D6-B0C65FA69302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgressScraper.Tests", "ProgressScraper.Tests\ProgressScraper.Tests.csproj", "{789FB841-96D6-470C-BEB4-FE3CC2CA8FB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2853027E-E925-4697-B644-232A74E5EC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2853027E-E925-4697-B644-232A74E5EC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2853027E-E925-4697-B644-232A74E5EC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF47942-1123-47B3-B4D6-B0C65FA69302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF47942-1123-47B3-B4D6-B0C65FA69302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF47942-1123-47B3-B4D6-B0C65FA69302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF47942-1123-47B3-B4D6-B0C65FA69302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789FB841-96D6-470C-BEB4-FE3CC2CA8FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789FB841-96D6-470C-BEB4-FE3CC2CA8FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789FB841-96D6-470C-BEB4-FE3CC2CA8FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789FB841-96D6-470C-BEB4-FE3CC2CA8FB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
