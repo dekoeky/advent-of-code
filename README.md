@@ -8,7 +8,7 @@ This repo contains my personal solutions for it.
 <!-- PROGRESS-MARKDOWN-PLACEHOLDER-START -->
 [![Advent of Code 2025](https://img.shields.io/badge/2025-19_/_24_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2025)  
 [![Advent of Code 2024](https://img.shields.io/badge/2024-19_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2024)  
-[![Advent of Code 2023](https://img.shields.io/badge/2023-12_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2023)  
+[![Advent of Code 2023](https://img.shields.io/badge/2023-13_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2023)  
 [![Advent of Code 2022](https://img.shields.io/badge/2022-16_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2022)  
 [![Advent of Code 2021](https://img.shields.io/badge/2021-22_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2021)  
 [![Advent of Code 2020](https://img.shields.io/badge/2020-20_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2020)  
@@ -18,7 +18,7 @@ This repo contains my personal solutions for it.
 [![Advent of Code 2016](https://img.shields.io/badge/2016-50_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2016)  
 [![Advent of Code 2015](https://img.shields.io/badge/2015-50_/_50_%E2%AD%90-blue?style=for-the-badge)](https://adventofcode.com/2015)  
 
-[![Total Stars](https://img.shields.io/badge/Total-284_/_524_%E2%AD%90-purple?style=for-the-badge)](https://adventofcode.com/events)  
+[![Total Stars](https://img.shields.io/badge/Total-285_/_524_%E2%AD%90-purple?style=for-the-badge)](https://adventofcode.com/events)  
 <!-- PROGRESS-MARKDOWN-PLACEHOLDER-END -->
 
 ## Code
