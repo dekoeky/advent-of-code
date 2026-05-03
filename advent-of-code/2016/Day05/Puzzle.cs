@@ -8,7 +8,7 @@ namespace advent_of_code._2016.Day05;
 public class Puzzle
 {
     [TestMethod]
-    public void Part1Examples()
+    public void Part1Example()
     {
         // Arrange
         const string doorId = "abc";
