@@ -7,10 +7,10 @@ public class Puzzle
     public void Example1()
     {
         // Arrange
-        var input = Inputs.Example;
+        var input = Inputs.Example1;
 
         // Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part1(input);
 
         // Assert
         Assert.AreEqual(5, result);
@@ -23,7 +23,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         // Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part1(input);
 
         // Assert
         Console.WriteLine($"Result: {result}");
@@ -34,10 +34,10 @@ public class Puzzle
     public void Example2()
     {
         // Arrange
-        var input = Inputs.Example;
+        var input = Inputs.Example2;
 
         // Act
-        var result = Calculations.Perform2(input);
+        var result = Calculations.Part2(input);
 
         // Assert
         Assert.AreEqual(2, result);
@@ -50,9 +50,9 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         // Act
-        var result = Calculations.Perform2(input);
+        var result = Calculations.Part2(input);
 
         // Assert
-        Console.WriteLine($"Result: {result}");
+        Assert.AreEqual(333657640517376, result);
     }
 }
