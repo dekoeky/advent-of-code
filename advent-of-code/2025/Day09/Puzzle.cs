@@ -10,7 +10,7 @@ public class Puzzle
         var input = Inputs.Example;
 
         // Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part1(input);
 
         // Assert
         Assert.AreEqual(50, result);
@@ -23,7 +23,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         // Act
-        var result = Calculations.Perform(input);
+        var result = Calculations.Part1(input);
 
         // Assert
         Assert.AreEqual(4767418746, result);
@@ -36,24 +36,22 @@ public class Puzzle
         var input = Inputs.Example;
 
         // Act
-        var result = Calculations.Perform3(input);
+        var result = Calculations.Part2(input);
 
         // Assert
         Assert.AreEqual(24, result);
     }
 
-    //[TestMethod]
-    //public void Puzzle2()
-    //{
-    //    // Arrange
-    //    var input = Inputs.Puzzle;
+    [TestMethod]
+    public void Puzzle2()
+    {
+        // Arrange
+        var input = Inputs.Puzzle;
 
-    //    // Act
-    //    throw new NotImplementedException("dead end");
-    //    var result = Calculations.Perform3(input);
+        // Act
+        var result = Calculations.Part2(input);
 
-    //    // Assert
-    //    Assert.IsLessThan(2147380284, result);
-    //    Console.WriteLine($"Result: {result}");
-    //}
+        // Assert
+        Assert.AreEqual(1461987144, result);
+    }
 }
