@@ -6,9 +6,9 @@ internal static class Calculations
     {
         var grid = BuildPowerLevelGrid(gridSerialNumber);
 
-        var maxPos = GetMaxOfSize(grid, 3, out _);
+        var (x, y) = GetMaxOfSize(grid, 3, out _);
 
-        return $"{maxPos.X},{maxPos.Y}";
+        return $"{x},{y}";
     }
 
     private static int[,] BuildPowerLevelGrid(int gridSerialNumber)
@@ -65,13 +65,6 @@ internal static class Calculations
                 sum += values[r, c];
 
         return sum;
-    }
-
-    private static (int X, int Y, int Size) GetMaxOfAnySize(int[,] grid)
-    {
-        throw new NotImplementedException();
-
-        //return (maxPos.X, maxPos.Y, maxSize);
     }
 
     public static int[,] BuildSummedAreaTable(int[,] grid)
