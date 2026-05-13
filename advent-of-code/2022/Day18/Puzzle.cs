@@ -1,7 +1,7 @@
 namespace advent_of_code._2022.Day18;
 
 /// <summary>
-/// Year 2020 Day 18 solution.
+/// Year 2022 Day 18 solution.
 /// </summary>
 /// <seealso href="https://adventofcode.com/2020/day/18"/>
 [TestClass]
