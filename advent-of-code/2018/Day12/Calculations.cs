@@ -2,21 +2,64 @@ namespace advent_of_code._2018.Day12;
 
 internal static class Calculations
 {
-    public static int Part1(ReadOnlySpan<char> input, int generations)
+    public static long Part1(ReadOnlySpan<char> input, int generations)
     {
         var initialState = Parse(input, out var patterns);
 
+        int generation;
         // plants can expand 2 pots per generation;
         var maxPlants = initialState.Length + 2 * 2 * generations;
         var zeroIndex = 2 * generations;
         var firstIndex = 0 - zeroIndex;
-        Span<bool> plants = new bool[maxPlants];
-        Span<bool> newPlants = new bool[maxPlants];
+        Span<bool> plants = maxPlants <= 100 ? stackalloc bool[maxPlants] : new bool[maxPlants];
+        Span<bool> newPlants = maxPlants <= 100 ? stackalloc bool[maxPlants] : new bool[maxPlants];
 
         initialState.CopyTo(plants[zeroIndex..]);
 
-        Print(plants);
-        for (var g = 0; g < generations; g++)
+        for (generation = 0; generation < generations; generation++)
+        {
+            Print(generation, plants);
+            plants.CopyTo(newPlants);
+
+            for (var i = 2; i < maxPlants - 2; i++)
+            {
+                bool matched = false;
+                var five = plants[new Range(i - 2, i + 3)];
+                foreach (var pattern in patterns)
+                    if (five.SequenceEqual(pattern.Pattern))
+                    {
+                        newPlants[i] = pattern.Result;
+                        matched = true;
+                        break; // Assume only one pattern can match
+                    }
+                if (!matched)
+                    newPlants[i] = false;
+            }
+
+            newPlants.CopyTo(plants);
+        }
+
+        Print(generation, plants);
+        return SumOfIndices(plants, firstIndex);
+    }
+
+    public static long Part2(ReadOnlySpan<char> input, long actualGenerations)
+    {
+        var initialState = Parse(input, out var patterns);
+        var generations = 500;
+        int generation;
+        // plants can expand 2 pots per generation;
+        var maxPlants = initialState.Length + 2 * 2 * generations;
+        var zeroIndex = 2 * generations;
+        var firstIndex = 0 - zeroIndex;
+        Span<bool> plants = maxPlants <= 100 ? stackalloc bool[maxPlants] : new bool[maxPlants];
+        Span<bool> newPlants = maxPlants <= 100 ? stackalloc bool[maxPlants] : new bool[maxPlants];
+        bool[] lastPatternStorage = new bool[maxPlants];
+        Span<bool> lastPattern = [];
+
+        initialState.CopyTo(plants[zeroIndex..]);
+
+        for (generation = 0; generation < generations; generation++)
         {
             plants.CopyTo(newPlants);
 
@@ -36,20 +79,30 @@ internal static class Calculations
             }
 
             newPlants.CopyTo(plants);
-            Print(plants);
+
+            var newPattern = ExtractPattern(plants);
+
+            if (lastPattern.StartsWith(newPattern))
+            {
+                Debug.WriteLine($"Pattern detected at generation {generation}");
+                break;
+            }
         }
 
-        return SumOfIndices(plants, firstIndex);
+        return SumOfIndices(plants, firstIndex + actualGenerations - generation); // TODO: Add offset
     }
 
-    public static int Part2(ReadOnlySpan<char> input, long generations)
+    private static ReadOnlySpan<bool> ExtractPattern(ReadOnlySpan<bool> plants)
     {
-        throw new NotImplementedException();
+        var first = plants.IndexOf(true);
+        var last = plants.LastIndexOf(true);
+
+        return plants[new Range(first, last)];
     }
 
-    private static int SumOfIndices(ReadOnlySpan<bool> plants, int firstIndex)
+    private static long SumOfIndices(ReadOnlySpan<bool> plants, long firstIndex)
     {
-        var sum = 0;
+        var sum = 0L;
 
         for (var i = 0; i < plants.Length; i++)
             if (plants[i])
@@ -63,9 +116,11 @@ internal static class Calculations
     }
 
     [Conditional("DEBUG")]
-    private static void Print(ReadOnlySpan<bool> plants)
+    private static void Print(int generation, ReadOnlySpan<bool> plants)
     {
         var n = 0;
+
+        Debug.Write($"[{generation}]: ");
 
         foreach (var present in plants)
             if (present)

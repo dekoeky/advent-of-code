@@ -35,6 +35,22 @@ public class Puzzle
         Assert.AreEqual(3410, result);
     }
 
+
+    [TestMethod]
+    public void CheckForPattern()
+    {
+        // Act
+        var input = Inputs.Example;
+        var generations = 100;
+
+        // Act
+        _ = Calculations.Part1(input, generations);
+
+        // Run this test in DEBUG
+        // Watch the output
+
+    }
+
     [TestMethod]
     public void Part2Puzzle()
     {
@@ -46,6 +62,6 @@ public class Puzzle
         var result = Calculations.Part2(input, generations);
 
         // Assert
-        Assert.AreEqual(10333, result);
+        Assert.AreEqual(4000000001480, result);
     }
 }
