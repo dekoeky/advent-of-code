@@ -13,6 +13,7 @@ internal static class Calculations
                     //Debug.WriteLine(string.Join(',', values));
                     return values[0];
 
+                // Add:
                 case 1:
                     indexA = values[i + 1];
                     indexB = values[i + 2];
@@ -24,6 +25,7 @@ internal static class Calculations
                     i += 4;
                     break;
 
+                // Multiply:
                 case 2:
                     indexA = values[i + 1];
                     indexB = values[i + 2];
