@@ -1,9 +1,6 @@
 name: 🔑 Daily AoC Token Check
 description: Checks whether the AoC Token, configured in github secrets, has not yet expired.
-run-name: >
-  ${{ github.event_name == 'workflow_dispatch'
-      && format('🔑 AoC Token Check (manual) - %Y-%m-%d %H:%M:%S', now())
-      || format('🔑 AoC Token Check (daily) - %Y-%m-%d', now()) }}
+run-name: "🔑 AoC Token Check"
 
 
 on:
@@ -15,6 +12,15 @@ jobs:
   check-token:
     runs-on: ubuntu-slim
     steps:
+      - name: Set run name (manual or scheduled)
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            NAME="🔑 AoC Token Check (manual) - $(date '+%Y-%m-%d %H:%M:%S')"
+          else
+            NAME="🔑 AoC Token Check (daily) - $(date '+%Y-%m-%d')"
+          fi
+
+          echo "GITHUB_RUN_NAME=$NAME" >> $GITHUB_ENV
       - name: Check AoC session token
         env:
           AOC_SESSION: ${{ secrets.AOC_SESSION }}
