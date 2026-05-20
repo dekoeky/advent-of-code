@@ -10,10 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      # - name: Checkout repository
+      #   uses: actions/checkout@v4
 
-      - name: Check Token
+      # - name: Check Token
+      #   env:
+      #     AOC_SESSION: ${{ secrets.AOC_SESSION }}
+      #   run: ./star-tracking/scripts/check-token.sh
+
+      - name: Check AoC session token
         env:
           AOC_SESSION: ${{ secrets.AOC_SESSION }}
-        run: ./star-tracking/scripts/check-token.sh
+        run: |
+          URL="https://adventofcode.com/2015/day/4/input"
+
+          if [[ -z "$AOC_SESSION" ]]; then
+              echo "ERROR: AOC_SESSION token not provided." >&2
+              exit 1
+          fi
+
+          status=$(curl -s -o /dev/null -w "%{http_code}" \
+              --cookie "session=$AOC_SESSION" "$URL")
+
+          if [[ $status == 200 ]]; then
+              echo "OK"
+              exit 0
+          else
+              echo "NOT OK (status $status)"
+              exit 2
+          fi
