@@ -2,13 +2,8 @@ namespace advent_of_code.Helpers;
 
 public static class StringToCharArray
 {
-    public static char[,] To2DArray(this string input)
-        => To2DArray(input, c => c);
     public static char[,] To2DArray(this ReadOnlySpan<char> input)
         => To2DArray(input, c => c);
-
-    public static T[,] To2DArray<T>(this string input, Func<char, T> selector)
-        => To2DArray((ReadOnlySpan<char>)input, selector);
 
     public static T[,] To2DArray<T>(this ReadOnlySpan<char> input, Func<char, T> selector)
     {

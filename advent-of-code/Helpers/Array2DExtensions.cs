@@ -4,6 +4,36 @@ namespace advent_of_code.Helpers;
 
 public static class Array2DExtensions
 {
+    extension(Array)
+    {
+        /// <summary>
+        /// Assigns the given <paramref name="value"/> of type <typeparamref name="T"/> to each element of the given <paramref name="array"/>.
+        /// </summary>
+        /// <remarks>2D extension of <see cref="Array.Fill{T}(T[], T)"/></remarks>
+        /// <typeparam name="T">The type of the elements in the array.</typeparam>
+        /// <param name="array">The array to be filled.</param>
+        /// <param name="value">The value to assign to each array element.</param>
+        public static void Fill<T>(T[,] array, T value)
+        {
+            for (var i = 0; i < array.GetLength(0); i++)
+                for (var j = 0; j < array.GetLength(1); j++)
+                    array[i, j] = value;
+        }
+
+        public static void Copy<T>(T[,] source, T[,] destination)
+        {
+            var rows = source.GetLength(0);
+            var cols = source.GetLength(1);
+
+            if (destination.GetLength(0) != rows) throw new ArgumentOutOfRangeException(nameof(destination), "The destination array has a different size than the source array");
+            if (destination.GetLength(1) != cols) throw new ArgumentOutOfRangeException(nameof(destination), "The destination array has a different size than the source array");
+
+            for (var r = 0; r < rows; r++)
+                for (var c = 0; c < cols; c++)
+                    destination[r, c] = source[r, c];
+        }
+    }
+
     extension(Array data)
     {
         public TOut[,] CreateEqualSizeArray<TOut>()
