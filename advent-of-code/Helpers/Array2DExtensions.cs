@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace advent_of_code.Helpers;
 
 public static class Array2DExtensions
@@ -44,6 +46,40 @@ public static class Array2DExtensions
                     converted[r, c] = Convert(array[r, c]);
 
             return converted;
+        }
+
+        /// <summary>
+        /// Returns the value at the given <paramref name="row"/> and <paramref name="col"/>, if it is inside the bounds of the given array.
+        /// </summary>
+        /// <remarks>
+        /// It is assumed that the structure of the array is array[ROW, COL].
+        /// </remarks>
+        /// <returns>True if inside the array.</returns>
+        public bool TryGetValue(int row, int col, [MaybeNullWhen(false)] out T value)
+        {
+            if (row < 0 || col < 0 || row >= array.GetLength(0) || col >= array.GetLength(1))
+            {
+                value = default;
+                return false;
+            }
+
+            value = array[row, col];
+            return true;
+        }
+    }
+
+    extension<T>(T[,] array) where T : struct
+    {
+        /// <summary>
+        /// Creates a copy of the given array.
+        /// </summary>
+        public T[,] Copy()
+        {
+            var copy = new T[array.GetLength(0), array.GetLength(1)];
+
+            Array.Copy(array, copy, array.Length);
+
+            return copy;
         }
     }
 }
