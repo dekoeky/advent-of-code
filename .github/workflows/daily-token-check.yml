@@ -1,4 +1,4 @@
-name: Daily AoC Token Check
+name: 🔑 Daily AoC Token Check
 
 on:
   schedule:
@@ -7,17 +7,8 @@ on:
 
 jobs:
   check-token:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-slim
     steps:
-      # - name: Checkout repository
-      #   uses: actions/checkout@v4
-
-      # - name: Check Token
-      #   env:
-      #     AOC_SESSION: ${{ secrets.AOC_SESSION }}
-      #   run: ./star-tracking/scripts/check-token.sh
-
       - name: Check AoC session token
         env:
           AOC_SESSION: ${{ secrets.AOC_SESSION }}
