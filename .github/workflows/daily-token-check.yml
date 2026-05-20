@@ -1,4 +1,10 @@
 name: 🔑 Daily AoC Token Check
+description: Checks whether the AoC Token, configured in github secrets, has not yet expired.
+run-name: >
+  ${{ github.event_name == 'workflow_dispatch'
+      && format('🔑 AoC Token Check (manual) - %Y-%m-%d %H:%M:%S', now())
+      || format('🔑 AoC Token Check (daily) - %Y-%m-%d', now()) }}
+
 
 on:
   schedule:
