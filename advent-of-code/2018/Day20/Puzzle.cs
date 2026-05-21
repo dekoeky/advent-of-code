@@ -1,9 +1,9 @@
 namespace advent_of_code._2018.Day20;
 
 /// <summary>
-/// Year 2018 Day 18 solution.
+/// Year 2018 Day 20 solution.
 /// </summary>
-/// <seealso href="https://adventofcode.com/2018/day/18"/>
+/// <seealso href="https://adventofcode.com/2018/day/20"/>
 [TestClass]
 public class Puzzle
 {
