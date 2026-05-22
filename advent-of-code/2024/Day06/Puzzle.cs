@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day06;
+namespace advent_of_code._2024.Day06;
 
 [TestClass]
 public class Puzzle
@@ -6,52 +6,52 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Example);
 
-        //Act
+        // Act
         var result = Calculations.GetDistinctGuardPositions(map);
 
-        //Assert
+        // Assert
         Assert.AreEqual(41, result);
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Puzzle);
 
-        //Act
+        // Act
         var result = Calculations.GetDistinctGuardPositions(map);
 
-        //Assert
+        // Assert
         Console.WriteLine(result);
     }
 
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Example);
 
-        //Act
+        // Act
         var result = Calculations.GetPossibleLoopObstructionPositionsCount(map);
 
-        //Assert
+        // Assert
         Assert.AreEqual(6, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var map = String2D.StringTo2DArray(Inputs.Puzzle);
 
-        //Act
+        // Act
         var result = Calculations.GetPossibleLoopObstructionPositionsCount(map);
 
-        //Assert
+        // Assert
         Console.WriteLine(result);
     }
 }

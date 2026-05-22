@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2025.Day07;
+namespace advent_of_code._2025.Day07;
 
 [TestClass]
 public class Puzzle
@@ -6,13 +6,13 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var beamSplits = Calculations.CountBeamSplits(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Beam Splits: {beamSplits}");
         Assert.AreEqual(21, beamSplits);
     }
@@ -20,13 +20,13 @@ public class Puzzle
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var beamSplits = Calculations.CountBeamSplits(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Beam Splits: {beamSplits}");
         Assert.AreEqual(1570, beamSplits);
     }
@@ -34,26 +34,26 @@ public class Puzzle
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var result = Calculations.CountPaths(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(40, result);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var result = Calculations.CountPaths(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Result: {result}");
         Assert.AreEqual(15118009521693, result);
     }

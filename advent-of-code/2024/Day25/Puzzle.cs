@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day25;
+namespace advent_of_code._2024.Day25;
 
 [TestClass]
 public class Puzzle
@@ -6,50 +6,50 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var count = Calculations.CountFittingCombinations(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(3, count);
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var count = Calculations.CountFittingCombinations(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Unique Combinations: {count}");
     }
 
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
 
-        //Act
+        // Act
         throw new NotImplementedException();
 
-        //Assert
+        // Assert
 
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
 
-        //Act
+        // Act
         throw new NotImplementedException();
 
-        //Assert
+        // Assert
 
     }
 }

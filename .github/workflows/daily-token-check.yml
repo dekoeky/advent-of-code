@@ -1,0 +1,44 @@
+name: 🔑 Daily AoC Token Check
+description: Checks whether the AoC Token, configured in github secrets, has not yet expired.
+run-name: "🔑 AoC Token Check"
+
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-token:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Set run name (manual or scheduled)
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            NAME="🔑 AoC Token Check (manual) - $(date '+%Y-%m-%d %H:%M:%S')"
+          else
+            NAME="🔑 AoC Token Check (daily) - $(date '+%Y-%m-%d')"
+          fi
+
+          echo "GITHUB_RUN_NAME=$NAME" >> $GITHUB_ENV
+      - name: Check AoC session token
+        env:
+          AOC_SESSION: ${{ secrets.AOC_SESSION }}
+        run: |
+          URL="https://adventofcode.com/2015/day/4/input"
+
+          if [[ -z "$AOC_SESSION" ]]; then
+              echo "ERROR: AOC_SESSION token not provided." >&2
+              exit 1
+          fi
+
+          status=$(curl -s -o /dev/null -w "%{http_code}" \
+              --cookie "session=$AOC_SESSION" "$URL")
+
+          if [[ $status == 200 ]]; then
+              echo "OK"
+              exit 0
+          else
+              echo "NOT OK (status $status)"
+              exit 2
+          fi

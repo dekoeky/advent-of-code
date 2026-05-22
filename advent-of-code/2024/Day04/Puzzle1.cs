@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2024.Day04;
+namespace advent_of_code._2024.Day04;
 
 [TestClass]
 public class Puzzle1
@@ -6,28 +6,28 @@ public class Puzzle1
     [TestMethod]
     public void Example()
     {
-        //Arrange
+        // Arrange
         var input = Input.Example;
         var wordToSearch = "XMAS";
 
-        //Act
+        // Act
         var count = Calculations.CountOccurances(input, wordToSearch);
 
-        //Assert
+        // Assert
         Assert.AreEqual(18, count);
     }
 
     [TestMethod]
     public void Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Input.Puzzle1;
         var wordToSearch = "XMAS";
 
-        //Act
+        // Act
         var count = Calculations.CountOccurances(input, wordToSearch);
 
-        //Assert
+        // Assert
         Console.WriteLine(count);
     }
 }
@@ -38,26 +38,26 @@ public class Puzzle2
     [TestMethod]
     public void Example()
     {
-        //Arrange
+        // Arrange
         var input = Input.Example;
 
-        //Act
+        // Act
         var count = Calculations.CountMasCrossings(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(9, count);
     }
 
     [TestMethod]
     public void Puzzle()
     {
-        //Arrange
+        // Arrange
         var input = Input.Puzzle1;
 
-        //Act
+        // Act
         var count = Calculations.CountMasCrossings(input);
 
-        //Assert
+        // Assert
         Console.WriteLine(count);
     }
 }

@@ -1,0 +1,14 @@
+# [2024](https://adventofcode.com/2024)
+
+- [Day 01](./Day01/)
+- [Day 02](./Day02/)
+- [Day 03](./Day03/)
+- [Day 04](./Day04/)
+- [Day 06](./Day06/)
+- [Day 07](./Day07/)
+- [Day 08](./Day08/)
+- [Day 20](./Day20/)
+- [Day 24](./Day24/)
+- [Day 25](./Day25/)
+
+[Back To Main](../../README.md)

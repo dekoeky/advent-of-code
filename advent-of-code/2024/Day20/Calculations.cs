@@ -1,6 +1,3 @@
-﻿using advent_of_code.Helpers;
-using System.Diagnostics;
-
 namespace advent_of_code._2024.Day20;
 
 public static class Calculations

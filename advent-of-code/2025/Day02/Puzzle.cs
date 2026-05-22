@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2025.Day02;
+namespace advent_of_code._2025.Day02;
 
 [TestClass]
 public class Puzzle
@@ -6,13 +6,13 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var sum = Calculations.SumOfInvalidIds(input, IdRange.ValidateAbAb);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Sum of invalid ids is : {sum}");
         Assert.AreEqual(1227775554, sum);
     }
@@ -21,26 +21,26 @@ public class Puzzle
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var sum = Calculations.SumOfInvalidIds(input, IdRange.ValidateAbAb);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Sum of invalid ids is : {sum}");
     }
 
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var sum = Calculations.SumOfInvalidIds(input, IdRange.Validate2);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Sum of invalid ids is : {sum}");
         Assert.AreEqual(4174379265, sum);
     }
@@ -48,13 +48,13 @@ public class Puzzle
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var sum = Calculations.SumOfInvalidIds(input, IdRange.Validate2);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Sum of invalid ids is : {sum}");
     }
 }

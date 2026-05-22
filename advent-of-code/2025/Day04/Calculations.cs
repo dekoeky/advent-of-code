@@ -1,6 +1,3 @@
-﻿using advent_of_code.Helpers;
-using System.Diagnostics;
-
 namespace advent_of_code._2025.Day04;
 
 public static class Calculations
@@ -10,7 +7,7 @@ public static class Calculations
         var data = input.To2DArray();
 
         var count = 0;
-        var removed = 0;
+        int removed;
 
         do
         {

@@ -1,5 +1,3 @@
-﻿using System.Diagnostics;
-
 namespace advent_of_code._2025.Day02;
 
 internal static class Calculations

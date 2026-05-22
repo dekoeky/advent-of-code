@@ -1,5 +1,3 @@
-﻿using advent_of_code.Helpers;
-
 namespace advent_of_code._2024.Day06;
 
 public static class Calculations
@@ -67,7 +65,8 @@ public static class Calculations
                     default:
                         yield return new RowCol(r, c);
                         break;
-                };
+                }
+                ;
             }
     }
 

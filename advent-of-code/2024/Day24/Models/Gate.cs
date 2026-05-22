@@ -2,17 +2,17 @@
 
 public class Gate
 {
-    public string ValueA { get; set; }
-    public string ValueB { get; set; }
+    public required string ValueA { get; set; }
+    public required string ValueB { get; set; }
     public BitOperation Op { get; set; }
-    public string Result { get; set; }
+    public required string Result { get; set; }
 
     public bool Calculate(bool a, bool b) => Op switch
     {
         BitOperation.AND => a & b,
         BitOperation.OR => a | b,
         BitOperation.XOR => a ^ b,
-        _ => throw new ArgumentOutOfRangeException()
+        _ => throw new NotImplementedException(),
     };
 
     private static readonly string[] Splitters = [" ", "->"];

@@ -1,4 +1,4 @@
-﻿namespace advent_of_code._2025.Day03;
+namespace advent_of_code._2025.Day03;
 
 [TestClass]
 public class Puzzle
@@ -6,54 +6,54 @@ public class Puzzle
     [TestMethod]
     public void Example1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
 
-        //Act
+        // Act
         var sum = Calculations.CalculateJoltageSum(input);
 
-        //Assert
+        // Assert
         Assert.AreEqual(357, sum);
     }
 
     [TestMethod]
     public void Puzzle1()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
 
-        //Act
+        // Act
         var sum = Calculations.CalculateJoltageSum(input);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Sum of Max Joltages: {sum}");
     }
 
     [TestMethod]
     public void Example2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Example;
         var numberOfBatteries = 12;
 
-        //Act
+        // Act
         var sum = Calculations.CalculateJoltageSum2(input, numberOfBatteries);
 
-        //Assert
+        // Assert
         Assert.AreEqual(3121910778619, sum);
     }
 
     [TestMethod]
     public void Puzzle2()
     {
-        //Arrange
+        // Arrange
         var input = Inputs.Puzzle;
         var numberOfBatteries = 12;
 
-        //Act
+        // Act
         var sum = Calculations.CalculateJoltageSum2(input, numberOfBatteries);
 
-        //Assert
+        // Assert
         Console.WriteLine($"Sum of Max Joltages: {sum}");
     }
 }
