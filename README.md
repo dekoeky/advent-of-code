@@ -26,3 +26,6 @@ This repo contains my personal solutions for it.
 - [2023](./advent-of-code/2023/README.md)
 - [2024](./advent-of-code/2024/README.md)
 - [2025](./advent-of-code/2025/README.md)
+
+## Actions
+[![🔑 Daily AoC Token Check](https://github.com/dekoeky/advent-of-code/actions/workflows/daily-token-check.yml/badge.svg?branch=main)](https://github.com/dekoeky/advent-of-code/actions/workflows/daily-token-check.yml)
