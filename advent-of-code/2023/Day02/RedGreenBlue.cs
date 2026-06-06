@@ -6,7 +6,14 @@ public struct RedGreenBlue
     public int Green;
     public int Blue;
 
-    public int Power => Red * Green * Blue;
+    public readonly int GetPower() => Red * Green * Blue;
+
+    public static readonly RedGreenBlue Zero = new()
+    {
+        Red = 0,
+        Green = 0,
+        Blue = 0,
+    };
 
     public static RedGreenBlue Parse(ReadOnlySpan<char> input)
     {

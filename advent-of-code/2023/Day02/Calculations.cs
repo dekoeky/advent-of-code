@@ -23,6 +23,23 @@ internal static class Calculations
 
     public static int Part2(string input)
     {
-        throw new NotImplementedException();
+        var puzzleInput = GameInfo.ParseMany(input);
+        var sumOfPowers = 0;
+
+        foreach (var game in puzzleInput)
+        {
+            var min = RedGreenBlue.Zero;
+
+            foreach (var grab in game.Grabs)
+            {
+                min.Red = Math.Max(min.Red, grab.Red);
+                min.Green = Math.Max(min.Green, grab.Green);
+                min.Blue = Math.Max(min.Blue, grab.Blue);
+            }
+
+            sumOfPowers += min.GetPower();
+        }
+
+        return sumOfPowers;
     }
 }
