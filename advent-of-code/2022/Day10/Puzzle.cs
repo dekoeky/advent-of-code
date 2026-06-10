@@ -3,7 +3,7 @@ namespace advent_of_code._2022.Day10;
 /// <summary>
 /// Year 2022 Day 10 solution.
 /// </summary>
-/// <seealso href="https://adventofcode.com/2020/day/10"/>
+/// <seealso href="https://adventofcode.com/2022/day/10"/>
 [TestClass]
 public class Puzzle
 {
