@@ -26,30 +26,6 @@ public class Puzzle
         var count = Calculations.CountFittingCombinations(input);
 
         // Assert
-        Console.WriteLine($"Unique Combinations: {count}");
-    }
-
-    [TestMethod]
-    public void Example2()
-    {
-        // Arrange
-
-        // Act
-        throw new NotImplementedException();
-
-        // Assert
-
-    }
-
-    [TestMethod]
-    public void Puzzle2()
-    {
-        // Arrange
-
-        // Act
-        throw new NotImplementedException();
-
-        // Assert
-
+        Assert.AreEqual(3439, count);
     }
 }
