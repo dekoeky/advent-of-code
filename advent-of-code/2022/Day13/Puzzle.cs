@@ -43,16 +43,7 @@ public class Puzzle
         var result = Calculations.Part2(input);
 
         // Assert
-        Debug.WriteLine(result);
-        AreEqual(
-            """
-            ##..##..##..##..##..##..##..##..##..##..
-            ###...###...###...###...###...###...###.
-            ####....####....####....####....####....
-            #####.....#####.....#####.....#####.....
-            ######......######......######......####
-            #######.......#######.......#######.....
-            """, result);
+        Assert.AreEqual(140, result);
     }
 
     [TestMethod]
@@ -65,20 +56,6 @@ public class Puzzle
         var result = Calculations.Part2(input);
 
         // Assert
-        Debug.WriteLine(result);
-        AreEqual(
-            """
-            ####...##.#..#.###..#..#.#....###..####.
-            #.......#.#..#.#..#.#..#.#....#..#....#.
-            ###.....#.#..#.###..#..#.#....#..#...#..
-            #.......#.#..#.#..#.#..#.#....###...#...
-            #....#..#.#..#.#..#.#..#.#....#.#..#....
-            #.....##...##..###...##..####.#..#.####.
-            """, result); // FJUBULRZ
+        Assert.AreEqual(21756, result);
     }
-
-    private static void AreEqual(string expected, string actual)
-        => Assert.AreEqual(
-            expected.ReplaceLineEndings().Trim(),
-            actual.ReplaceLineEndings().Trim());
 }
