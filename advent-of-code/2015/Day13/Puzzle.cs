@@ -10,7 +10,7 @@ public class Puzzle
         var input = Inputs.Example;
 
         // Act
-        var result = Calculations.OptimalSeatingHappiness(input);
+        var result = Calculations.Part1(input);
 
         // Assert
         Assert.AreEqual(330, result);
@@ -23,7 +23,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         // Act
-        var result = Calculations.OptimalSeatingHappiness(input);
+        var result = Calculations.Part1(input);
 
         // Assert
         Assert.AreEqual(618, result);
@@ -36,7 +36,7 @@ public class Puzzle
         var input = Inputs.Puzzle;
 
         // Act
-        var result = Calculations.OptimalSeatingHappiness(input, true);
+        var result = Calculations.Part2(input);
 
         // Assert
         Assert.AreEqual(601, result);
