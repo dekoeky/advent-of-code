@@ -10,12 +10,15 @@ internal static class NumericsExtensions
         public TOut Product<TOut>()
             where TOut : struct, INumberBase<TOut>
         {
-            var product = TOut.One;
+            checked
+            {
+                var product = TOut.One;
 
-            foreach (var element in elements)
-                product *= TOut.CreateChecked(element);
+                foreach (var element in elements)
+                    product *= TOut.CreateChecked(element);
 
-            return product;
+                return product;
+            }
         }
 
         public TIn Product() => elements.Product<TIn, TIn>();
