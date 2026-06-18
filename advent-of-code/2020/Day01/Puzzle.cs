@@ -38,7 +38,7 @@ public class Puzzle
     }
 
     [TestMethod]
-    public void Part2Examples()
+    public void Part2Example()
     {
         // Arrange
         var input = SplitOn.NewLines(Inputs.Example)
