@@ -2,48 +2,55 @@ namespace advent_of_code.Helpers;
 
 public static class StringToCharArray
 {
-    public static char[,] To2DArray(this ReadOnlySpan<char> input)
-        => To2DArray(input, c => c);
-
-    public static T[,] To2DArray<T>(this ReadOnlySpan<char> input, Func<char, T> selector)
+    extension(ReadOnlySpan<char> input)
     {
-        GetSize(input, out var rows, out var cols);
+        /// <summary>
+        /// Converts the given 2D input (which is expected to be an NxM character multiline rectangle, into a 2D array.
+        /// </summary>
+        /// <returns>A 2D char array with row/y coordinate being the first index, col/x coordinate being the second index.</returns>
+        public char[,] To2DArray()
+            => To2DArray(input, c => c);
 
-        var data = new T[rows, cols];
-        var i = 0;
-        for (var r = 0; r < rows; r++)
-            for (var c = 0; c < cols; c++)
-            {
-                while (input[i] is '\r' or '\n')
-                    i++;
+        public T[,] To2DArray<T>(Func<char, T> selector)
+        {
+            GetSize(input, out var rows, out var cols);
 
-                data[r, c] = selector(input[i++]);
-            }
+            var data = new T[rows, cols];
+            var i = 0;
+            for (var r = 0; r < rows; r++)
+                for (var c = 0; c < cols; c++)
+                {
+                    while (input[i] is '\r' or '\n')
+                        i++;
 
-        return data;
-    }
+                    data[r, c] = selector(input[i++]);
+                }
 
-    private static void GetSize(ReadOnlySpan<char> input, out int rows, out int cols)
-    {
-        rows = 1;
-        cols = 0;
+            return data;
+        }
 
-        foreach (var ch in input)
-            if (ch is '\r' or '\n')
-            {
-                // in case of CR LF, the LF is ignored
-                if (cols == 0) continue;
+        private void GetSize(out int rows, out int cols)
+        {
+            rows = 1;
+            cols = 0;
 
-                // Increase the amount of rows, assuming each row has data
-                rows++;
+            foreach (var ch in input)
+                if (ch is '\r' or '\n')
+                {
+                    // in case of CR LF, the LF is ignored
+                    if (cols == 0) continue;
 
-                // Reset the column count, to indicate a new line has just started.
-                // The last row will indicate the column count
-                cols = 0;
-            }
-            else
-            {
-                cols++;
-            }
+                    // Increase the amount of rows, assuming each row has data
+                    rows++;
+
+                    // Reset the column count, to indicate a new line has just started.
+                    // The last row will indicate the column count
+                    cols = 0;
+                }
+                else
+                {
+                    cols++;
+                }
+        }
     }
 }
