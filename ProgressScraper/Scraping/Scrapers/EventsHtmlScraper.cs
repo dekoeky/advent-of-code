@@ -15,7 +15,6 @@ internal partial record EventsHtmlScraper : IHtmlScraper<ScrapedEvents>
 
     public ScrapedEvents Scrape(string html)
     {
-
         var result = new ScrapedEvents();
 
         //foreach (Match match in Regex.Matches(html))

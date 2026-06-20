@@ -9,8 +9,6 @@ internal class AdventOfCodeClient : IDisposable
     private const string Url = "https://adventofcode.com";
     private static readonly Uri Uri = new(Url);
 
-    private const int FirstYear = 2015;
-
     private readonly HttpClientHandler _handler;
     private readonly HttpClient _client;
 
@@ -18,6 +16,7 @@ internal class AdventOfCodeClient : IDisposable
 
     public AdventOfCodeClient(string session)
     {
+        // TODO: Validate session
         _handler = new HttpClientHandler
         {
             CookieContainer = new CookieContainer(),
@@ -43,9 +42,10 @@ internal class AdventOfCodeClient : IDisposable
         var current = DateTime.Now.Year;
         var years = current - FirstYear + 1;
 
-        Dictionary<string, string> html = new(years + 1);
-
-        html["events"] = await EventsHtml(ct);
+        Dictionary<string, string> html = new(years + 1)
+        {
+            ["events"] = await EventsHtml(ct)
+        };
 
         // TODO: Consider parallelizing requests
         for (var year = FirstYear; year < current; year++)
