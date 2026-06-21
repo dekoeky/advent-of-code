@@ -20,6 +20,7 @@ public class YearHtmlScraperTests
         var result = scraper.Scrape(html);
 
         // Assert
+        Assert.IsNotNull(result);
         Debug.WriteLine(result);
     }
 }

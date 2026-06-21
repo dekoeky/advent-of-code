@@ -1,6 +1,6 @@
-namespace AdventOfCode.ProgressScraper.Scraping.Json.Models;
+namespace AdventOfCode.ProgressScraper.Conversion.Models;
 
-record InfoPerDay
+internal record InfoPerDay
 {
     public int Year { get; set; }
     public int Day { get; set; }

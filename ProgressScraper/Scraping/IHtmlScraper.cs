@@ -1,4 +1,4 @@
-namespace AdventOfCode.ProgressScraper.Scrapers;
+namespace AdventOfCode.ProgressScraper.Scraping;
 
 internal interface IHtmlScraper<TOut>
 {
