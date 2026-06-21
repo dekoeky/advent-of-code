@@ -2,53 +2,67 @@ namespace advent_of_code._2020.Day17;
 
 internal static class Calculations
 {
+    private const int Capacity = 10 * 10;
+
     public static int Part1(ReadOnlySpan<char> input)
+        => Execute<Cube3D>(input);
+
+    public static long Part2(ReadOnlySpan<char> input)
+        => Execute<Cube4D>(input);
+
+    private static int Execute<TCube>(ReadOnlySpan<char> input)
+        where TCube : struct, ICube<TCube>
     {
-        var activeCubes = Parse(input);
-        var activate = new HashSet<Cube>();
-        var deActivate = new HashSet<Cube>();
+        var activeCubes = Parse<TCube>(input);
+        var inactiveCubes = new HashSet<TCube>();
+        var toBeActivated = new HashSet<TCube>();
+        var toBeDeActivated = new HashSet<TCube>();
+        var cycle = 0;
 
-        Debug.WriteLine($"After {0} cycles: {activeCubes.Count} active cubes");
-
-        for (var cycle = 0; cycle < 6; cycle++)
+        for (cycle = 0; cycle < 6; cycle++)
         {
+            PrintActiveCubeCount();
+
             // If a cube is active and exactly 2 or 3 of its neighbors are also active, the cube remains active.
             // Otherwise, the cube becomes inactive.
             foreach (var cube in activeCubes)
                 if (!TwoOrThreeNeighborsActive(activeCubes, cube))
-                    deActivate.Add(cube);
+                    toBeDeActivated.Add(cube);
 
-            var inactiveCubes = activeCubes
-                .SelectMany(c => c.EnumerateNeighbors())
-                .Distinct()
-                .Where(c => !activeCubes.Contains(c));
+            inactiveCubes.Clear();
+            foreach (var activeCube in activeCubes)
+                foreach (var neighbor in activeCube.EnumerateNeighbors())
+                    if (!activeCubes.Contains(neighbor))
+                        inactiveCubes.Add(neighbor);
 
             // If a cube is inactive but exactly 3 of its neighbors are active, the cube becomes active.
             // Otherwise, the cube remains inactive.
             foreach (var cube in inactiveCubes)
                 if (ExactlyThreeNeighborsActive(activeCubes, cube))
-                    activate.Add(cube);
+                    toBeActivated.Add(cube);
 
-            foreach (var cube in deActivate)
-                activeCubes.Remove(cube);
-            foreach (var cube in activate)
-                activeCubes.Add(cube);
+            // Perform deactivations and activations
+            foreach (var cube in toBeDeActivated) activeCubes.Remove(cube);
+            foreach (var cube in toBeActivated) activeCubes.Add(cube);
 
-            deActivate.Clear();
-            activate.Clear();
+            // Prevent activating/deactivating twice
+            toBeDeActivated.Clear();
+            toBeActivated.Clear();
 
-            Debug.WriteLine($"After {cycle + 1} cycles: {activeCubes.Count} active cubes");
+            PrintActiveCubeCount();
         }
 
+        PrintActiveCubeCount();
         return activeCubes.Count;
+
+        void PrintActiveCubeCount()
+        {
+            Debug.WriteLine($"After {cycle} cycles: {activeCubes.Count} active cubes");
+        }
     }
 
-    public static long Part2(ReadOnlySpan<char> input)
-    {
-        throw new NotImplementedException();
-    }
-
-    private static bool TwoOrThreeNeighborsActive(HashSet<Cube> activeCubes, Cube cube)
+    private static bool TwoOrThreeNeighborsActive<T>(HashSet<T> activeCubes, T cube)
+        where T : struct, ICube<T>
     {
         var n = 0;
 
@@ -59,7 +73,8 @@ internal static class Calculations
         return n == 2 || n == 3;
     }
 
-    private static bool ExactlyThreeNeighborsActive(HashSet<Cube> activeCubes, Cube cube)
+    private static bool ExactlyThreeNeighborsActive<T>(HashSet<T> activeCubes, T cube)
+        where T : struct, ICube<T>
     {
         var n = 0;
 
@@ -70,16 +85,17 @@ internal static class Calculations
         return n == 3;
     }
 
-    private static HashSet<Cube> Parse(ReadOnlySpan<char> input)
+    private static HashSet<T> Parse<T>(ReadOnlySpan<char> input)
+        where T : struct, ICube<T>
     {
-        var cubes = new HashSet<Cube>(10 * 10);
+        var cubes = new HashSet<T>(Capacity);
         var r = 0;
 
         foreach (var line in input.EnumerateLines())
         {
             for (var c = 0; c < line.Length; c++)
                 if (line[c] == '#')
-                    cubes.Add(new Cube(c, r, 0));
+                    cubes.Add(T.From2D(c, r));
 
             r++;
         }
