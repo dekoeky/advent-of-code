@@ -1,4 +1,4 @@
-namespace AdventOfCode.ProgressScraper.Scraping.Json.Models;
+namespace AdventOfCode.ProgressScraper.Conversion.Models;
 
 internal record InfoPerYear
 {
