@@ -110,36 +110,4 @@ internal static partial class Calculations
             }
         });
     }
-
 }
-
-//interface IInstruction
-//{
-//    int Duration { get; }
-//    void Execute(ref int x);
-//}
-
-//internal static Instruction
-//{
-//        public static iinst
-//}
-
-//internal readonly record struct Add(int v) : IInstruction
-//{
-//    public int Duration { get; } = 2;
-
-//    public void Execute(ref int x)
-//    {
-//        x += v;
-//    }
-//}
-
-//internal readonly record struct NoOp : IInstruction
-//{
-//    public readonly int Duration => 1;
-
-//    public void Execute(ref int x)
-//    {
-//        // No Operation
-//    }
-//}
