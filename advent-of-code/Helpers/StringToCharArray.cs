@@ -29,6 +29,24 @@ public static class StringToCharArray
             return data;
         }
 
+        public T[,] To2DArray<T>(Func<char, T> selector, out int rows, out int cols)
+        {
+            GetSize(input, out rows, out cols);
+
+            var data = new T[rows, cols];
+            var i = 0;
+            for (var r = 0; r < rows; r++)
+                for (var c = 0; c < cols; c++)
+                {
+                    while (input[i] is '\r' or '\n')
+                        i++;
+
+                    data[r, c] = selector(input[i++]);
+                }
+
+            return data;
+        }
+
         private void GetSize(out int rows, out int cols)
         {
             rows = 1;
